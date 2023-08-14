@@ -1,0 +1,19 @@
+[book]
+authors = ["Genesis3800"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Solidity in Foundry"
+description = "Learn Solidity from scratch, using Foundry from the very start."
+
+
+# select renderers
+renderer = ["html"]
+
+[output.html]
+git-repository-url = "https://github.com/Genesis3800/Solidity-in-Foundry-mdbook"
+default-theme = "Rust"
+
+[output.html.fold]
+enable = true
+level = 1
