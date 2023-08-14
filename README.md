@@ -1,4 +1,4 @@
-<p align="center"><img src="[images/Solidity-in-Foundry-Banner.png](https://github.com/Genesis3800/Solidity-in-Foundry-mdbook/assets/56264430/6adfe7fb-9193-43b7-a282-9540acd363ec)" style="border-radius: 20px"></p>
+<p align="center"><img src="https://github.com/Genesis3800/Solidity-in-Foundry-mdbook/assets/56264430/6adfe7fb-9193-43b7-a282-9540acd363ec"></p>
 
 Solidity is the most popular smart contract development language at the time of writing, while Foundry is gradually approaching the same position as a smart contract development framework. 
 
