@@ -1,7 +1,5 @@
 ## HelloWorld.sol
 
-Create a file named `HelloWorld.sol`.
-
 The first line of almost all smart contracts starts something like this:
 
 ```cpp
@@ -63,3 +61,15 @@ contract HelloWorld {
     string public greeting = "Hello World";
 }
 ```
+
+If you are working with Remix, you can compile your contract by clicking `Ctrl + S`.
+
+If you are working with Foundry, make sure you have a terminal open in the parent directory, the same directory where you initalized the project.
+Then run the following command:
+
+```sh
+forge build
+```
+
+This command will compile all the Solidity files that exist within the parent directory.
+If you've reached this far, and want to write a corresponding test for this contract, create a new file named `HelloWorld.t.sol` on the same level as this file.
