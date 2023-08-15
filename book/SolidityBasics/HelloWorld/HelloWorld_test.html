@@ -170,6 +170,61 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="helloworldtsol"><a class="header" href="#helloworldtsol">HelloWorld.t.sol</a></h2>
+<p>Foundry allows us to write tests using Solidity, allowing Solidity developers the comfort of not having to use a language they are not comfortable with.</p>
+<p>Each '<em>test</em>' is a single function within a smart contract. These typically have a condition that has to be satisfied.
+If the condition is true, the test passes; otherwise it fails.</p>
+<p>Since <code>HelloWorld.t.sol</code> is basically another Solidity file from Forge's perspective, it will begin like other Solidity files do:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.19;
+</code></pre>
+<p>Next, we import two smart contracts into this file:</p>
+<pre><code class="language-cpp">import &quot;forge-std/Test.sol&quot;;
+import &quot;./HelloWorld.sol&quot;;
+</code></pre>
+<ol>
+<li>The first import is the Forge test library, which contains the <code>Test</code> contract. Foundry lets us use its' testing suite by exposing functions from within the test contract to us.</li>
+<li>The second import is the smart contract we are testing. </li>
+</ol>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+Please note that Solidity as a language supports inheritance, but not all smart contract languages do so.
+Do not worry too much about how inheritance works, we will look into it in more detail later on.</p>
+</blockquote>
+<p>Next, we initialize the <code>HelloWorld_test</code> contract like this:</p>
+<pre><code class="language-cpp">contract HelloWorld_test is Test {
+
+}
+</code></pre>
+<p>This is the contract that will contain all of our tests. We inherit from the <code>Test</code> contract, which allows us to use the testing suite.</p>
+<p>Next, we initialize a test function within the contract like this:</p>
+<pre><code class="language-cpp">    function testgreeting() public {
+    }
+</code></pre>
+<p>Within the function, create a new instance of the HelloWorld contract like this:</p>
+<pre><code class="language-cpp">   HelloWorld helloWorld = new HelloWorld();
+</code></pre>
+<p>We can now use the <code>helloWorld</code> variable to access the functions within the <code>HelloWorld</code> contract.
+Lastly we use <code>assertEq</code> to assert equality between two values. If the values are equal, the test passes; otherwise it fails.
+This is what the test function should look like:</p>
+<pre><code class="language-cpp">    function testgreeting() public {
+        HelloWorld helloWorld = new HelloWorld();
+        assertEq(helloWorld.greeting(), &quot;Hello World&quot;);
+    }
+</code></pre>
+<p>Now understand this carefully.
+We use Forge to compile and test our smart contracts. Forge compiles all smart contracts in a codebase indiscriminately. This means that it will compile all smart contracts, including the test contracts.</p>
+<p>Forge distingueshes the indiviual test functions by looking at function names. Any function beginning with the string <em>&quot;test&quot;</em> is executed as a test function.
+This means that <em>&quot;testgreeting&quot;</em> is a valid name for a test function, but <em>&quot;greetingtest&quot;</em> is not.</p>
+<p>Make sure to save your files and compile them using the build command. We can now execute the test function by running the following command:</p>
+<pre><code class="language-sh">forge test --match-path src/SolidityBasics/HelloWorld/HelloWorld.t.sol
+</code></pre>
+<p>We can use the match path flag to specify which test file we want to run. This is useful when we have multiple test files in our codebase, and don't want to run all of them.</p>
+<p>This is what your terminal should look like right now:</p>
+<img src="../../images/HelloWorld.t.sol_1.png" style="border-radius: 10px">
+<p>And that's it!<br />
+This is all there is to writing a basic Solidity test in Foundry.
+Now there's a variety of different ways to write more complex and comprehensive tests, but we will look into those later on, when we deal with more complex smart contracts.</p>
 
                     </main>
 

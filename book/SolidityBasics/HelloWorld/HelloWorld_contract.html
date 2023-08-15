@@ -170,7 +170,6 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="helloworldsol"><a class="header" href="#helloworldsol">HelloWorld.sol</a></h2>
-<p>Create a file named <code>HelloWorld.sol</code>.</p>
 <p>The first line of almost all smart contracts starts something like this:</p>
 <pre><code class="language-cpp">// SPDX-License-Identifier: MIT
 </code></pre>
@@ -232,6 +231,13 @@ contract HelloWorld {
     string public greeting = &quot;Hello World&quot;;
 }
 </code></pre>
+<p>If you are working with Remix, you can compile your contract by clicking <code>Ctrl + S</code>.</p>
+<p>If you are working with Foundry, make sure you have a terminal open in the parent directory, the same directory where you initalized the project.
+Then run the following command:</p>
+<pre><code class="language-sh">forge build
+</code></pre>
+<p>This command will compile all the Solidity files that exist within the parent directory.
+If you've reached this far, and want to write a corresponding test for this contract, create a new file named <code>HelloWorld.t.sol</code> on the same level as this file.</p>
 
                     </main>
 

@@ -170,9 +170,41 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<p>To follow along, I highly recommend that you install <a href="https://github.com/foundry-rs/foundry">Foundry</a> on your system.
+The exact installation instructions might vary depending on your system, but the <a href="https://book.getfoundry.sh/" title="Foundry book">Foundry book</a> is quite comprehensive.</p>
+<p>Also, feel free to use <a href="https://remix.ethereum.org/">Remix</a> for an interactive UI to interact with your smart contracts, although I'll be using Foundry throughout.
+This will still be a useful resource for you if you decide to stick with Remix, which is more beginner friendly.</p>
 <p>Once you have all the CLI tools part of Foundry installed in your system, you can get started by creating a new directory and running:</p>
 <pre><code class="language-sh">$  forge init
 </code></pre>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+Foundry is a modular toolchain that consists currently of 4 different CLI tools. We will primarily be using Forge throughout, but
+you can read more about each of these tools in the <a href="https://book.getfoundry.sh/">Foundry book</a>.</p>
+</blockquote>
+<p>You will notice a bunch of new files and directories. Here are the ones you primarily need to worry about for now:</p>
+<ol>
+<li>
+<p><strong>lib</strong>: This directory is where all your dependencies are stored. You will find yourself relying on Solidity code written by others much too often. This directory is where all of that will be stored.</p>
+</li>
+<li>
+<p><strong>src</strong>: The src directory is where you typically store all your smart contract code.</p>
+</li>
+<li>
+<p><strong>test</strong>: The test directory is where you typically store all your test files.</p>
+</li>
+<li>
+<p><strong>script</strong>: This is where you typically write scripts that deploy new smart contracts to the blockchain, and interact with existing ones.</p>
+</li>
+<li>
+<p><strong>foundry.toml</strong>: We can use the toml file to customise virtually all aspects of Foundry's behaviour.</p>
+</li>
+</ol>
+<p>For now, to keep things simple, we will only be working with the src directory. All our code and tests will go inside this directory.</p>
+<p>To test if your Foundry project was properly initialized, run:</p>
+<pre><code class="language-sh">$  forge build
+</code></pre>
+<p>This command compiles all the Solidity files within the parent directory, not just the src directory. For now, Forge will simply compile the Solidity code that ships along with the default initialization of a Foundry project.</p>
 
                     </main>
 
