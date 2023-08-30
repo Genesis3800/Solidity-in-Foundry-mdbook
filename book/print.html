@@ -31,6 +31,8 @@
 
         <!-- Custom theme stylesheets -->
 
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
     <div id="body-container">
@@ -84,7 +86,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">About</a></li><li class="chapter-item expanded affix "><a href="GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">About</a></li><li class="chapter-item expanded affix "><a href="GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -186,7 +188,7 @@
 In case you find the Remix IDE intimidating, you can go through <a href="https://youtu.be/umepbfKp5rI?t=8138">this lesson</a> from Patrick Collins' 32-hour course.</li>
 <li>For folks interested in getting started with Foundry, I recommend you follow all sections of each chapter.</li>
 </ol>
-<p>Here are some sources that this book is inspired by:</p>
+<p>Here are some resources that this book is inspired by:</p>
 <ol>
 <li><a href="https://doc.rust-lang.org/book/">The Rust Book.</a></li>
 <li><a href="https://book.getfoundry.sh/">The Foundry Book.</a></li>
@@ -380,6 +382,215 @@ This means that <em>&quot;testgreeting&quot;</em> is a valid name for a test fun
 <p>And that's it!<br />
 This is all there is to writing a basic Solidity test in Foundry.
 Now there's a variety of different ways to write more complex and comprehensive tests, but we will look into those later on, when we deal with more complex smart contracts.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="types-in-solidity"><a class="header" href="#types-in-solidity">Types in Solidity</a></h1>
+<p>Solidity is a statically typed language, which means that the type of every variable needs to be defined at compile time.
+Solidity has many different types for us to use.
+They can be broadly classified into two categories:</p>
+<h3 id="1-value-types"><a class="header" href="#1-value-types">1. Value Types</a></h3>
+<p>Variables of value types store their data in a piece of memory they own.
+These variables are passed by value when assigned to new variables or passed as function arguments.
+Changing the value of the second variable won't alter the value of the original.
+Solidity consists of the following value types:</p>
+<ul>
+<li>Booleans (<em><code>bool</code></em>)</li>
+<li>Unsigned integers (<em><code>uint</code></em>)</li>
+<li>Signed integers (<em><code>int</code></em>)</li>
+<li>Addresses (<em><code>address</code></em>)</li>
+<li>Enums (<em><code>enum</code></em>)</li>
+<li>Bytes (<em><code>bytes</code></em>)</li>
+</ul>
+<h3 id="2-reference-types"><a class="header" href="#2-reference-types">2. Reference Types</a></h3>
+<p>Variables of reference types store a reference to the data in a piece of memory they don't own.
+That piece of memory could be used by other reference type variables as well.
+These variables are passed by reference when assigned to new variables or passed as function arguments.
+A change in the value of the second variable can alter the value of the original.
+Solidity consists of the following reference types:</p>
+<ul>
+<li>Arrays (<em><code>[]</code></em>)</li>
+<li>Structs (<em><code>struct</code></em>)</li>
+<li>Mappings (<em><code>mapping</code></em>)</li>
+</ul>
+<p>Consider this bit of Solidity code:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract ValueType_vs_ReferenceType {
+
+    //Value Type
+    uint public valueVar1 = 10;
+    
+    // Reference Type: array of unsigned integers
+    uint[] public referenceVar1 = [1, 2, 3];
+
+    function modifyValueType(uint newValue) public view {
+
+        // New Variable assigned the value of valueVar1
+        uint valueVar2 = valueVar1;  
+
+        //New variable passed 
+        valueVar2 = newValue;
+    }
+
+    function modifyReferenceType(uint index, uint newValue) public {
+        
+        // New variable, referenceVar2, refers to the same storage location as referenceVar1
+        uint[] storage referenceVar2 = referenceVar1;  
+        
+        // Modifying the localReference will modify referenceVar
+        referenceVar2[index] = newValue;              
+    }
+
+}
+</code></pre>
+<p>This contract consists of two state variables, and two public functions:</p>
+<ol>
+<li>
+<p><code>modifyValueType()</code> creates a new value type in memory, and assigns it an initial value from the original value type, before finally assigning it the value passed as the function argument.
+This won't change the value of <code>valueVar1</code>, since only a temporary copy of the variable was used inside the function.</p>
+</li>
+<li>
+<p><code>modifyReferenceType()</code> creates a new reference type in memory that points to the same storage location as <code>referenceVar1</code>. Any change of value in <code>referenceVar2</code> will also be reflected in <code>referenceVar1</code>.</p>
+</li>
+</ol>
+<p>We can write a small test contract for the snippet as follows:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {Test, console2} from &quot;forge-std/Test.sol&quot;;
+import &quot;./Types.sol&quot;;
+
+contract Types_test is Test {
+
+    ValueType_vs_ReferenceType types;
+
+    function setUp() public {
+        types = new ValueType_vs_ReferenceType();
+    }
+
+    function test_modifyValueType() public {
+        types.modifyValueType(1234);
+
+        // Check that the value of valueVar1 is still 10
+        assertEq(types.valueVar1(), 10);
+    }
+
+    function test_modifyReferenceType() public {
+        console2.log(&quot;The original value of referenceVar1[0] is&quot;, types.referenceVar1(0));
+        types.modifyReferenceType(0, 1234);
+
+        // Check that the value of referenceVar1[0] is now 1234
+        assertEq(types.referenceVar1(0), 1234);
+    }
+}
+</code></pre>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+The <a href="https://github.com/foundry-rs/forge-std/blob/74cfb77e308dd188d2f58864aaf44963ae6b88b1/src/console2.sol"><code>Console2</code></a> library is used to log values to the console. It is imported from the <code>forge-std</code> package, just like the main <code>Test</code> 
+library.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="value-types"><a class="header" href="#value-types">Value Types</a></h1>
+<h3 id="boolean"><a class="header" href="#boolean">Boolean</a></h3>
+<p>A <code>bool</code> variable can have two values: <code>true</code> or <code>false</code>.
+Solidity supports the following operations on booleans:</p>
+<ul>
+<li><code>==</code> (equality)</li>
+<li><code>!=</code> (inequality)</li>
+<li><code>!</code> (logical negation)</li>
+<li><code>||</code> (logical disjunction, “OR”)</li>
+<li><code>&amp;&amp;</code> (logical conjunction, “AND”)</li>
+</ul>
+<h3 id="integers"><a class="header" href="#integers">Integers</a></h3>
+<p>Solidity supports signed and unsigned integers of various sizes. They are represented using the <code>int</code> and <code>uint</code> keywords respectively, followed by the number of bits they occupy.
+For example, <code>int256</code> is a signed integer occupying 256 bits, and <code>uint8</code> is an unsigned integer occupying 8 bits.</p>
+<p>Solidity supports integers of sizes 8 bits to 256 bits, in steps of 8.
+Integers can be initialized as <code>int</code> or <code>uint</code> without specifying the number of bits they occupy. In this case, they occupy 256 bits.</p>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+All integers in Solidity are limitied to a certain range. For example, <code>uint256</code> can store a value between 0 and 2<sup>256</sup>-1.
+Since <code>int256</code> is a signed integer, it can store a value between -2<sup>255</sup> and 2<sup>255</sup>-1.</p>
+</blockquote>
+<h3 id="addresses"><a class="header" href="#addresses">Addresses</a></h3>
+<p>An <code>address</code> variable stores a 20-byte/160-bits value (size of an Ethereum address).</p>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+EVM addresses are 40 characters long, however they are often represented as hexadecimal strings with a <code>0x</code> prefix.
+But strictly speaking, the address itself is 40 characters.</p>
+</blockquote>
+<p>Solidity allows us to initialize a variable of type <code>address</code> in two ways:</p>
+<ul>
+<li><code>address</code>: A simple 20-byte value that represents an EVM address. We can query the balance of an address variable using the <code>balance()</code> method.</li>
+<li><code>address payable</code>: Any address variable initialzed with the <code>payable</code> keyword comes with two additional functions, <code>transfer()</code> and <code>send()</code>, that allow us to send ETH to the address.</li>
+</ul>
+<p>Any integer can be typecasted into an address like this:</p>
+<pre><code class="language-cpp">address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
+</code></pre>
+<p>In this case, the integer <code>1</code> will be treated as a <code>uint160</code>, which can be implicitly converted into an address type.</p>
+<h3 id="enums"><a class="header" href="#enums">Enums</a></h3>
+<p>Enums are a user-defined type that can have upto 256 members. They are declared using the <code>enum</code> keyword.
+Each member of an enum corresponds to an integer value, starting from 0.
+However, each member can be referenced directly by using its' explicit name.</p>
+<p>Consider this example:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract TestEnum {
+    // Define an enum named Directions
+    enum Directions { Center, Up, Down, Left, Right }
+
+    // Declare a state variable of type Directions with default value (Center, the first enum member)
+    Directions public defaultDirection;
+
+    // Declare and initialize another state variable
+    Directions public setDirection = Directions.Right;
+
+    // Change the direction
+    function changeDirection(Directions newDirection) public {
+        setDirection = newDirection;
+    }
+
+    // Get the maximum value of the Directions enum (i.e., Right in this case)
+    function getMaxEnumValue() public pure returns (Directions) {
+        return type(Directions).max;
+    }
+}
+</code></pre>
+<h3 id="fixed-size-byte-arrays"><a class="header" href="#fixed-size-byte-arrays">Fixed-size byte arrays</a></h3>
+<p>The <code>bytes</code> type is used to store raw byte data. Even though bytes are always stored as an array of characters, fixed-size byte arrays are a value type, while dynamic-size byte arrays are reference type.</p>
+<p>A fixed size byte array can be anywhere between 1 and 32 bytes in size. 
+They are declared as:
+<code>bytes1</code>, <code>bytes2</code>, <code>bytes3</code>, .............. <code>bytes32</code>.</p>
+<p>Each byte can store 2 characters. Therefore, a <code>bytes20</code> variable can store upto 40 characters, enough for an Ethereum address.</p>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+All byte variables come with a <code>length</code> property that can be used to get the length of the bytes array.</p>
+</blockquote>
+<p>Here is a code snippet that demonstrates the use of fixed-size byte arrays:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract ByteContract {
+
+    // Declare a bytes20 variable to store data
+    bytes20 public data;
+
+    // Function to set data
+    function setData(bytes20 _data) public {
+        data = _data;
+    }
+
+    // Function to get the length of the bytes variable
+    function getFirstByte() public view returns (bytes1) {
+        return data[0];
+    }
+
+    function getLength() public view returns (uint){
+        return data.length;
+    }
+ 
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reference-types"><a class="header" href="#reference-types">Reference Types</a></h1>
+<p>To be Written soon</p>
 
                     </main>
 
@@ -434,7 +645,9 @@ Now there's a variety of different ways to write more complex and comprehensive 
 
         <script>
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
 

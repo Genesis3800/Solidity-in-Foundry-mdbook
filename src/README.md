@@ -18,7 +18,7 @@ There are two main ways of deriving value from this book:
 In case you find the Remix IDE intimidating, you can go through [this lesson](https://youtu.be/umepbfKp5rI?t=8138) from Patrick Collins' 32-hour course.
 2. For folks interested in getting started with Foundry, I recommend you follow all sections of each chapter.
 
-Here are some sources that this book is inspired by:
+Here are some resources that this book is inspired by:
 1. [The Rust Book.](https://doc.rust-lang.org/book/)
 2. [The Foundry Book.](https://book.getfoundry.sh/)
 3. [Solidity-by-example.](https://solidity-by-example.org/)

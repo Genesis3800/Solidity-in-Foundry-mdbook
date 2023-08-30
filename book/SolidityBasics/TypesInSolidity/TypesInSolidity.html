@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello World - Solidity in Foundry</title>
+        <title>Types in Solidity - Solidity in Foundry</title>
 
 
         <!-- Custom HTML head -->
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html" class="active"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html" class="active"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,34 +171,122 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
-<p>Before getting started with our first contract, let us set up the diectory structure I will be following throughout the book.
-As I said before, we will be storing all our code within the src directory.</p>
-<ol>
-<li>Create a directory called <code>SolidityBasics</code> inside <code>src</code>.
-This directory will contain all the chapters that deal with basic Solidity Syntax.</li>
-<li>Create another directory called <code>HelloWorld</code> inside <code>SolidityBasics</code>.
-This directory will contain all the code related to the Hello World contract. Each chapter will have its own directory.</li>
-<li>Create a file called <code>HelloWorld.sol</code> inside <code>HelloWorld</code>.</li>
-</ol>
-<p>Your directory structure should look something like this:</p>
-<pre><code class="language-sh">├── src/
-│ ├── SolidityBasics/
-│ │ ├── HelloWorld/
-| | │ ├── HelloWorld.sol
-│ │ │ └── HelloWorld.t.sol
+                        <h1 id="types-in-solidity"><a class="header" href="#types-in-solidity">Types in Solidity</a></h1>
+<p>Solidity is a statically typed language, which means that the type of every variable needs to be defined at compile time.
+Solidity has many different types for us to use.
+They can be broadly classified into two categories:</p>
+<h3 id="1-value-types"><a class="header" href="#1-value-types">1. Value Types</a></h3>
+<p>Variables of value types store their data in a piece of memory they own.
+These variables are passed by value when assigned to new variables or passed as function arguments.
+Changing the value of the second variable won't alter the value of the original.
+Solidity consists of the following value types:</p>
+<ul>
+<li>Booleans (<em><code>bool</code></em>)</li>
+<li>Unsigned integers (<em><code>uint</code></em>)</li>
+<li>Signed integers (<em><code>int</code></em>)</li>
+<li>Addresses (<em><code>address</code></em>)</li>
+<li>Enums (<em><code>enum</code></em>)</li>
+<li>Bytes (<em><code>bytes</code></em>)</li>
+</ul>
+<h3 id="2-reference-types"><a class="header" href="#2-reference-types">2. Reference Types</a></h3>
+<p>Variables of reference types store a reference to the data in a piece of memory they don't own.
+That piece of memory could be used by other reference type variables as well.
+These variables are passed by reference when assigned to new variables or passed as function arguments.
+A change in the value of the second variable can alter the value of the original.
+Solidity consists of the following reference types:</p>
+<ul>
+<li>Arrays (<em><code>[]</code></em>)</li>
+<li>Structs (<em><code>struct</code></em>)</li>
+<li>Mappings (<em><code>mapping</code></em>)</li>
+</ul>
+<p>Consider this bit of Solidity code:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract ValueType_vs_ReferenceType {
+
+    //Value Type
+    uint public valueVar1 = 10;
+    
+    // Reference Type: array of unsigned integers
+    uint[] public referenceVar1 = [1, 2, 3];
+
+    function modifyValueType(uint newValue) public view {
+
+        // New Variable assigned the value of valueVar1
+        uint valueVar2 = valueVar1;  
+
+        //New variable passed 
+        valueVar2 = newValue;
+    }
+
+    function modifyReferenceType(uint index, uint newValue) public {
+        
+        // New variable, referenceVar2, refers to the same storage location as referenceVar1
+        uint[] storage referenceVar2 = referenceVar1;  
+        
+        // Modifying the localReference will modify referenceVar
+        referenceVar2[index] = newValue;              
+    }
+
+}
 </code></pre>
-<p>You are now ready to write your first smart contract in Solidity, and learn about what all goes inside a bare-bones smart contract.</p>
+<p>This contract consists of two state variables, and two public functions:</p>
+<ol>
+<li>
+<p><code>modifyValueType()</code> creates a new value type in memory, and assigns it an initial value from the original value type, before finally assigning it the value passed as the function argument.
+This won't change the value of <code>valueVar1</code>, since only a temporary copy of the variable was used inside the function.</p>
+</li>
+<li>
+<p><code>modifyReferenceType()</code> creates a new reference type in memory that points to the same storage location as <code>referenceVar1</code>. Any change of value in <code>referenceVar2</code> will also be reflected in <code>referenceVar1</code>.</p>
+</li>
+</ol>
+<p>We can write a small test contract for the snippet as follows:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {Test, console2} from &quot;forge-std/Test.sol&quot;;
+import &quot;./Types.sol&quot;;
+
+contract Types_test is Test {
+
+    ValueType_vs_ReferenceType types;
+
+    function setUp() public {
+        types = new ValueType_vs_ReferenceType();
+    }
+
+    function test_modifyValueType() public {
+        types.modifyValueType(1234);
+
+        // Check that the value of valueVar1 is still 10
+        assertEq(types.valueVar1(), 10);
+    }
+
+    function test_modifyReferenceType() public {
+        console2.log(&quot;The original value of referenceVar1[0] is&quot;, types.referenceVar1(0));
+        types.modifyReferenceType(0, 1234);
+
+        // Check that the value of referenceVar1[0] is now 1234
+        assertEq(types.referenceVar1(0), 1234);
+    }
+}
+</code></pre>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+The <a href="https://github.com/foundry-rs/forge-std/blob/74cfb77e308dd188d2f58864aaf44963ae6b88b1/src/console2.sol"><code>Console2</code></a> library is used to log values to the console. It is imported from the <code>forge-std</code> package, just like the main <code>Test</code> 
+library.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../GettingStarted.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../SolidityBasics/HelloWorld/HelloWorld_test.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -208,11 +296,11 @@ This directory will contain all the code related to the Hello World contract. Ea
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../GettingStarted.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../SolidityBasics/HelloWorld/HelloWorld_test.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

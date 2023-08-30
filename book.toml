@@ -13,6 +13,7 @@ renderer = ["html"]
 [output.html]
 git-repository-url = "https://github.com/Genesis3800/Solidity-in-Foundry-mdbook"
 default-theme = "Rust"
+mathjax-support = true
 
 [output.html.fold]
 enable = true

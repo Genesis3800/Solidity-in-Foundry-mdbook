@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello World - Solidity in Foundry</title>
+        <title>Reference Types - Solidity in Foundry</title>
 
 
         <!-- Custom HTML head -->
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html" class="active"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html" class="active"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,36 +171,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
-<p>Before getting started with our first contract, let us set up the diectory structure I will be following throughout the book.
-As I said before, we will be storing all our code within the src directory.</p>
-<ol>
-<li>Create a directory called <code>SolidityBasics</code> inside <code>src</code>.
-This directory will contain all the chapters that deal with basic Solidity Syntax.</li>
-<li>Create another directory called <code>HelloWorld</code> inside <code>SolidityBasics</code>.
-This directory will contain all the code related to the Hello World contract. Each chapter will have its own directory.</li>
-<li>Create a file called <code>HelloWorld.sol</code> inside <code>HelloWorld</code>.</li>
-</ol>
-<p>Your directory structure should look something like this:</p>
-<pre><code class="language-sh">├── src/
-│ ├── SolidityBasics/
-│ │ ├── HelloWorld/
-| | │ ├── HelloWorld.sol
-│ │ │ └── HelloWorld.t.sol
-</code></pre>
-<p>You are now ready to write your first smart contract in Solidity, and learn about what all goes inside a bare-bones smart contract.</p>
+                        <h1 id="reference-types"><a class="header" href="#reference-types">Reference Types</a></h1>
+<p>To be Written soon</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../GettingStarted.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -208,13 +189,10 @@ This directory will contain all the code related to the Hello World contract. Ea
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../GettingStarted.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

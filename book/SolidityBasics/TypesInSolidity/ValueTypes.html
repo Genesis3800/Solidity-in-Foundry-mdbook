@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello World - Solidity in Foundry</title>
+        <title>Value Types - Solidity in Foundry</title>
 
 
         <!-- Custom HTML head -->
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html" class="active"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="active"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,34 +171,117 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
-<p>Before getting started with our first contract, let us set up the diectory structure I will be following throughout the book.
-As I said before, we will be storing all our code within the src directory.</p>
-<ol>
-<li>Create a directory called <code>SolidityBasics</code> inside <code>src</code>.
-This directory will contain all the chapters that deal with basic Solidity Syntax.</li>
-<li>Create another directory called <code>HelloWorld</code> inside <code>SolidityBasics</code>.
-This directory will contain all the code related to the Hello World contract. Each chapter will have its own directory.</li>
-<li>Create a file called <code>HelloWorld.sol</code> inside <code>HelloWorld</code>.</li>
-</ol>
-<p>Your directory structure should look something like this:</p>
-<pre><code class="language-sh">├── src/
-│ ├── SolidityBasics/
-│ │ ├── HelloWorld/
-| | │ ├── HelloWorld.sol
-│ │ │ └── HelloWorld.t.sol
+                        <h1 id="value-types"><a class="header" href="#value-types">Value Types</a></h1>
+<h3 id="boolean"><a class="header" href="#boolean">Boolean</a></h3>
+<p>A <code>bool</code> variable can have two values: <code>true</code> or <code>false</code>.
+Solidity supports the following operations on booleans:</p>
+<ul>
+<li><code>==</code> (equality)</li>
+<li><code>!=</code> (inequality)</li>
+<li><code>!</code> (logical negation)</li>
+<li><code>||</code> (logical disjunction, “OR”)</li>
+<li><code>&amp;&amp;</code> (logical conjunction, “AND”)</li>
+</ul>
+<h3 id="integers"><a class="header" href="#integers">Integers</a></h3>
+<p>Solidity supports signed and unsigned integers of various sizes. They are represented using the <code>int</code> and <code>uint</code> keywords respectively, followed by the number of bits they occupy.
+For example, <code>int256</code> is a signed integer occupying 256 bits, and <code>uint8</code> is an unsigned integer occupying 8 bits.</p>
+<p>Solidity supports integers of sizes 8 bits to 256 bits, in steps of 8.
+Integers can be initialized as <code>int</code> or <code>uint</code> without specifying the number of bits they occupy. In this case, they occupy 256 bits.</p>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+All integers in Solidity are limitied to a certain range. For example, <code>uint256</code> can store a value between 0 and 2<sup>256</sup>-1.
+Since <code>int256</code> is a signed integer, it can store a value between -2<sup>255</sup> and 2<sup>255</sup>-1.</p>
+</blockquote>
+<h3 id="addresses"><a class="header" href="#addresses">Addresses</a></h3>
+<p>An <code>address</code> variable stores a 20-byte/160-bits value (size of an Ethereum address).</p>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+EVM addresses are 40 characters long, however they are often represented as hexadecimal strings with a <code>0x</code> prefix.
+But strictly speaking, the address itself is 40 characters.</p>
+</blockquote>
+<p>Solidity allows us to initialize a variable of type <code>address</code> in two ways:</p>
+<ul>
+<li><code>address</code>: A simple 20-byte value that represents an EVM address. We can query the balance of an address variable using the <code>balance()</code> method.</li>
+<li><code>address payable</code>: Any address variable initialzed with the <code>payable</code> keyword comes with two additional functions, <code>transfer()</code> and <code>send()</code>, that allow us to send ETH to the address.</li>
+</ul>
+<p>Any integer can be typecasted into an address like this:</p>
+<pre><code class="language-cpp">address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
 </code></pre>
-<p>You are now ready to write your first smart contract in Solidity, and learn about what all goes inside a bare-bones smart contract.</p>
+<p>In this case, the integer <code>1</code> will be treated as a <code>uint160</code>, which can be implicitly converted into an address type.</p>
+<h3 id="enums"><a class="header" href="#enums">Enums</a></h3>
+<p>Enums are a user-defined type that can have upto 256 members. They are declared using the <code>enum</code> keyword.
+Each member of an enum corresponds to an integer value, starting from 0.
+However, each member can be referenced directly by using its' explicit name.</p>
+<p>Consider this example:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract TestEnum {
+    // Define an enum named Directions
+    enum Directions { Center, Up, Down, Left, Right }
+
+    // Declare a state variable of type Directions with default value (Center, the first enum member)
+    Directions public defaultDirection;
+
+    // Declare and initialize another state variable
+    Directions public setDirection = Directions.Right;
+
+    // Change the direction
+    function changeDirection(Directions newDirection) public {
+        setDirection = newDirection;
+    }
+
+    // Get the maximum value of the Directions enum (i.e., Right in this case)
+    function getMaxEnumValue() public pure returns (Directions) {
+        return type(Directions).max;
+    }
+}
+</code></pre>
+<h3 id="fixed-size-byte-arrays"><a class="header" href="#fixed-size-byte-arrays">Fixed-size byte arrays</a></h3>
+<p>The <code>bytes</code> type is used to store raw byte data. Even though bytes are always stored as an array of characters, fixed-size byte arrays are a value type, while dynamic-size byte arrays are reference type.</p>
+<p>A fixed size byte array can be anywhere between 1 and 32 bytes in size. 
+They are declared as:
+<code>bytes1</code>, <code>bytes2</code>, <code>bytes3</code>, .............. <code>bytes32</code>.</p>
+<p>Each byte can store 2 characters. Therefore, a <code>bytes20</code> variable can store upto 40 characters, enough for an Ethereum address.</p>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+All byte variables come with a <code>length</code> property that can be used to get the length of the bytes array.</p>
+</blockquote>
+<p>Here is a code snippet that demonstrates the use of fixed-size byte arrays:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract ByteContract {
+
+    // Declare a bytes20 variable to store data
+    bytes20 public data;
+
+    // Function to set data
+    function setData(bytes20 _data) public {
+        data = _data;
+    }
+
+    // Function to get the length of the bytes variable
+    function getFirstByte() public view returns (bytes1) {
+        return data[0];
+    }
+
+    function getLength() public view returns (uint){
+        return data.length;
+    }
+ 
+}
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../GettingStarted.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -208,11 +291,11 @@ This directory will contain all the code related to the Hello World contract. Ea
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../GettingStarted.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
