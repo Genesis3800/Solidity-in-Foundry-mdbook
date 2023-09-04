@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="active"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="active"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="../../Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">3.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">3.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">3.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">3.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">3.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">3.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">3.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -172,7 +172,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="value-types"><a class="header" href="#value-types">Value Types</a></h1>
-<h3 id="boolean"><a class="header" href="#boolean">Boolean</a></h3>
+<h2 id="boolean"><a class="header" href="#boolean">Boolean</a></h2>
 <p>A <code>bool</code> variable can have two values: <code>true</code> or <code>false</code>.
 Solidity supports the following operations on booleans:</p>
 <ul>
@@ -182,7 +182,7 @@ Solidity supports the following operations on booleans:</p>
 <li><code>||</code> (logical disjunction, “OR”)</li>
 <li><code>&amp;&amp;</code> (logical conjunction, “AND”)</li>
 </ul>
-<h3 id="integers"><a class="header" href="#integers">Integers</a></h3>
+<h2 id="integers"><a class="header" href="#integers">Integers</a></h2>
 <p>Solidity supports signed and unsigned integers of various sizes. They are represented using the <code>int</code> and <code>uint</code> keywords respectively, followed by the number of bits they occupy.
 For example, <code>int256</code> is a signed integer occupying 256 bits, and <code>uint8</code> is an unsigned integer occupying 8 bits.</p>
 <p>Solidity supports integers of sizes 8 bits to 256 bits, in steps of 8.
@@ -192,7 +192,7 @@ Integers can be initialized as <code>int</code> or <code>uint</code> without spe
 All integers in Solidity are limitied to a certain range. For example, <code>uint256</code> can store a value between 0 and 2<sup>256</sup>-1.
 Since <code>int256</code> is a signed integer, it can store a value between -2<sup>255</sup> and 2<sup>255</sup>-1.</p>
 </blockquote>
-<h3 id="addresses"><a class="header" href="#addresses">Addresses</a></h3>
+<h2 id="addresses"><a class="header" href="#addresses">Addresses</a></h2>
 <p>An <code>address</code> variable stores a 20-byte/160-bits value (size of an Ethereum address).</p>
 <blockquote>
 <p>📝  <strong>Note:</strong>
@@ -208,7 +208,7 @@ But strictly speaking, the address itself is 40 characters.</p>
 <pre><code class="language-cpp">address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
 </code></pre>
 <p>In this case, the integer <code>1</code> will be treated as a <code>uint160</code>, which can be implicitly converted into an address type.</p>
-<h3 id="enums"><a class="header" href="#enums">Enums</a></h3>
+<h2 id="enums"><a class="header" href="#enums">Enums</a></h2>
 <p>Enums are a user-defined type that can have upto 256 members. They are declared using the <code>enum</code> keyword.
 Each member of an enum corresponds to an integer value, starting from 0.
 However, each member can be referenced directly by using its' explicit name.</p>
@@ -237,7 +237,7 @@ contract TestEnum {
     }
 }
 </code></pre>
-<h3 id="fixed-size-byte-arrays"><a class="header" href="#fixed-size-byte-arrays">Fixed-size byte arrays</a></h3>
+<h2 id="fixed-size-byte-arrays"><a class="header" href="#fixed-size-byte-arrays">Fixed-size byte arrays</a></h2>
 <p>The <code>bytes</code> type is used to store raw byte data. Even though bytes are always stored as an array of characters, fixed-size byte arrays are a value type, while dynamic-size byte arrays are reference type.</p>
 <p>A fixed size byte array can be anywhere between 1 and 32 bytes in size. 
 They are declared as:

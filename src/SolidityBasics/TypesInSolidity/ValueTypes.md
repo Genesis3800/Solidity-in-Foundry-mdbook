@@ -1,6 +1,6 @@
 # Value Types
 
-### Boolean
+## Boolean
 A `bool` variable can have two values: `true` or `false`.
 Solidity supports the following operations on booleans:
 
@@ -10,7 +10,7 @@ Solidity supports the following operations on booleans:
 - `||` (logical disjunction, “OR”)
 - `&&` (logical conjunction, “AND”)
 
-### Integers
+## Integers
 Solidity supports signed and unsigned integers of various sizes. They are represented using the `int` and `uint` keywords respectively, followed by the number of bits they occupy.
 For example, `int256` is a signed integer occupying 256 bits, and `uint8` is an unsigned integer occupying 8 bits.
 
@@ -21,7 +21,7 @@ Integers can be initialized as `int` or `uint` without specifying the number of 
 > All integers in Solidity are limitied to a certain range. For example, `uint256` can store a value between 0 and 2<sup>256</sup>-1.
 > Since `int256` is a signed integer, it can store a value between -2<sup>255</sup> and 2<sup>255</sup>-1.
 
-### Addresses
+## Addresses
 An `address` variable stores a 20-byte/160-bits value (size of an Ethereum address).
 
 > 📝  **Note:**
@@ -39,7 +39,7 @@ address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
 ```
 In this case, the integer `1` will be treated as a `uint160`, which can be implicitly converted into an address type.
 
-### Enums
+## Enums
 
 Enums are a user-defined type that can have upto 256 members. They are declared using the `enum` keyword.
 Each member of an enum corresponds to an integer value, starting from 0.
@@ -73,7 +73,7 @@ contract TestEnum {
 }
 ```
 
-### Fixed-size byte arrays
+## Fixed-size byte arrays
 
 The `bytes` type is used to store raw byte data. Even though bytes are always stored as an array of characters, fixed-size byte arrays are a value type, while dynamic-size byte arrays are reference type.
 

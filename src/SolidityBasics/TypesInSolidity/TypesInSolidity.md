@@ -4,7 +4,7 @@ Solidity is a statically typed language, which means that the type of every vari
 Solidity has many different types for us to use.
 They can be broadly classified into two categories:
 
-### 1. Value Types
+## 1. Value Types
 
 Variables of value types store their data in a piece of memory they own.
 These variables are passed by value when assigned to new variables or passed as function arguments.
@@ -18,7 +18,7 @@ Solidity consists of the following value types:
 - Enums (*`enum`*)
 - Bytes (*`bytes`*)
 
-### 2. Reference Types
+## 2. Reference Types
 
 Variables of reference types store a reference to the data in a piece of memory they don't own.
 That piece of memory could be used by other reference type variables as well.

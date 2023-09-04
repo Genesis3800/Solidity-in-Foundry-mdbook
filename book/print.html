@@ -86,7 +86,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">About</a></li><li class="chapter-item expanded affix "><a href="GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">About</a></li><li class="chapter-item expanded affix "><a href="GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">3.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">3.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">3.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">3.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">3.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">3.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">3.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -386,7 +386,7 @@ Now there's a variety of different ways to write more complex and comprehensive 
 <p>Solidity is a statically typed language, which means that the type of every variable needs to be defined at compile time.
 Solidity has many different types for us to use.
 They can be broadly classified into two categories:</p>
-<h3 id="1-value-types"><a class="header" href="#1-value-types">1. Value Types</a></h3>
+<h2 id="1-value-types"><a class="header" href="#1-value-types">1. Value Types</a></h2>
 <p>Variables of value types store their data in a piece of memory they own.
 These variables are passed by value when assigned to new variables or passed as function arguments.
 Changing the value of the second variable won't alter the value of the original.
@@ -399,7 +399,7 @@ Solidity consists of the following value types:</p>
 <li>Enums (<em><code>enum</code></em>)</li>
 <li>Bytes (<em><code>bytes</code></em>)</li>
 </ul>
-<h3 id="2-reference-types"><a class="header" href="#2-reference-types">2. Reference Types</a></h3>
+<h2 id="2-reference-types"><a class="header" href="#2-reference-types">2. Reference Types</a></h2>
 <p>Variables of reference types store a reference to the data in a piece of memory they don't own.
 That piece of memory could be used by other reference type variables as well.
 These variables are passed by reference when assigned to new variables or passed as function arguments.
@@ -489,7 +489,7 @@ The <a href="https://github.com/foundry-rs/forge-std/blob/74cfb77e308dd188d2f588
 library.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="value-types"><a class="header" href="#value-types">Value Types</a></h1>
-<h3 id="boolean"><a class="header" href="#boolean">Boolean</a></h3>
+<h2 id="boolean"><a class="header" href="#boolean">Boolean</a></h2>
 <p>A <code>bool</code> variable can have two values: <code>true</code> or <code>false</code>.
 Solidity supports the following operations on booleans:</p>
 <ul>
@@ -499,7 +499,7 @@ Solidity supports the following operations on booleans:</p>
 <li><code>||</code> (logical disjunction, “OR”)</li>
 <li><code>&amp;&amp;</code> (logical conjunction, “AND”)</li>
 </ul>
-<h3 id="integers"><a class="header" href="#integers">Integers</a></h3>
+<h2 id="integers"><a class="header" href="#integers">Integers</a></h2>
 <p>Solidity supports signed and unsigned integers of various sizes. They are represented using the <code>int</code> and <code>uint</code> keywords respectively, followed by the number of bits they occupy.
 For example, <code>int256</code> is a signed integer occupying 256 bits, and <code>uint8</code> is an unsigned integer occupying 8 bits.</p>
 <p>Solidity supports integers of sizes 8 bits to 256 bits, in steps of 8.
@@ -509,7 +509,7 @@ Integers can be initialized as <code>int</code> or <code>uint</code> without spe
 All integers in Solidity are limitied to a certain range. For example, <code>uint256</code> can store a value between 0 and 2<sup>256</sup>-1.
 Since <code>int256</code> is a signed integer, it can store a value between -2<sup>255</sup> and 2<sup>255</sup>-1.</p>
 </blockquote>
-<h3 id="addresses"><a class="header" href="#addresses">Addresses</a></h3>
+<h2 id="addresses"><a class="header" href="#addresses">Addresses</a></h2>
 <p>An <code>address</code> variable stores a 20-byte/160-bits value (size of an Ethereum address).</p>
 <blockquote>
 <p>📝  <strong>Note:</strong>
@@ -525,7 +525,7 @@ But strictly speaking, the address itself is 40 characters.</p>
 <pre><code class="language-cpp">address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
 </code></pre>
 <p>In this case, the integer <code>1</code> will be treated as a <code>uint160</code>, which can be implicitly converted into an address type.</p>
-<h3 id="enums"><a class="header" href="#enums">Enums</a></h3>
+<h2 id="enums"><a class="header" href="#enums">Enums</a></h2>
 <p>Enums are a user-defined type that can have upto 256 members. They are declared using the <code>enum</code> keyword.
 Each member of an enum corresponds to an integer value, starting from 0.
 However, each member can be referenced directly by using its' explicit name.</p>
@@ -554,7 +554,7 @@ contract TestEnum {
     }
 }
 </code></pre>
-<h3 id="fixed-size-byte-arrays"><a class="header" href="#fixed-size-byte-arrays">Fixed-size byte arrays</a></h3>
+<h2 id="fixed-size-byte-arrays"><a class="header" href="#fixed-size-byte-arrays">Fixed-size byte arrays</a></h2>
 <p>The <code>bytes</code> type is used to store raw byte data. Even though bytes are always stored as an array of characters, fixed-size byte arrays are a value type, while dynamic-size byte arrays are reference type.</p>
 <p>A fixed size byte array can be anywhere between 1 and 32 bytes in size. 
 They are declared as:
@@ -591,6 +591,360 @@ contract ByteContract {
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reference-types"><a class="header" href="#reference-types">Reference Types</a></h1>
 <p>To be Written soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlink"><a class="header" href="#chainlink">Chainlink</a></h1>
+<p><a href="https://chain.link/">Chainlink</a> is a decentralized oracle network that helps inject off-chain data into smart contracts on the blockchain.
+As of August 2023, Chainlink is the most widely used oracle network in the blockchain space, and secures billions of dollars in value for smart contracts across many different blockchain networks.
+It is crucial for any smart contract developer to be familiar with Chainlink's tooling.</p>
+<p>Each sub-section within this section will cover a different Chainlink product.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlink-data-feeds"><a class="header" href="#chainlink-data-feeds">Chainlink Data Feeds</a></h1>
+<p><a href="https://docs.chain.link/data-feeds#types-of-data-feeds">Chainlink's data feeds</a> are a collection of data points from Chainlink's decentralized oracle network.</p>
+<p>Chainlink offers a wide variety of data feeds, but in this tutorial we will be going over their price feeds service.
+Each Chainlink price feed returns the relative price of two assets, such as ETH/USD or BTC/USD.</p>
+<p>We will write a simple smart contract that consumes Chainlink's data feeds, and then a Foundry test for that smart contract.</p>
+<p>Briefly, here is how Chainlink's price feeds service works:</p>
+<ol>
+<li>
+<p>Chainlink has a network of off-chain nodes that fetch the latest prices of different assets and arrive at a consensus in real-time. These prices are fed into an on-chain aggregator contract.</p>
+</li>
+<li>
+<p>Each price feed has its' own aggregator contract.</p>
+</li>
+<li>
+<p>To query the latest relative price of any two assets, we simply need to call the <code>latestRoundData()</code> from the designated contract of that price feed.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlinkdatafeedssol"><a class="header" href="#chainlinkdatafeedssol">ChainlinkDataFeeds.sol</a></h1>
+<blockquote>
+<p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.sol">DataFeeds.sol</a> 💻</p>
+</blockquote>
+<p>Before getting started with the actual code, we need to install the dependencies for this project. Make sure you have a Foundry project initialized before moving on.</p>
+<h2 id="installing-dependencies"><a class="header" href="#installing-dependencies">Installing dependencies</a></h2>
+<p>Dependencies in a Foundry project are managed using <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodules</a> by default. 
+For this project, we will be using a slimmed down version of Chainlink's official smart contracts repo.</p>
+<p>To download the repo into the lib directory, run:</p>
+<pre><code class="language-sh">forge install https://github.com/smartcontractkit/chainlink-brownie-contracts/
+</code></pre>
+<p><strong>or simply</strong></p>
+<pre><code class="language-sh">forge install chainlink-brownie-contracts
+</code></pre>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+In my experience, Forge may sometimes install outdated versions of the dependencies. Run <code>forge update</code> after installing new
+dependencies to make sure you have the latest versions.</p>
+</blockquote>
+<h2 id="remapping-dependencies"><a class="header" href="#remapping-dependencies">Remapping dependencies</a></h2>
+<p>While working with installed dependencies, we may need to explicitly tell Forge where to look for the code.
+This can be done by defining your remappings inside a separate file.
+To create this file, run:</p>
+<pre><code class="language-sh">forge remappings &gt; remappings.txt
+</code></pre>
+<p>This will create a <code>remappings.txt</code> file in the root directory of your project.
+For now, delete everything inside the default remappings file and add the following two remappings inside:</p>
+<pre><code class="language-sh">forge-std/=lib/forge-std/src/
+@chainlink/=lib/chainlink-brownie-contracts/contracts/src/
+</code></pre>
+<p>The <code>forge-std</code> remapping is used to tell Forge where to look for the Forge standard library. The <code>@chainlink</code> remapping abstracts away the path to the Chainlink contracts.</p>
+<h2 id="writing-the-smart-contract"><a class="header" href="#writing-the-smart-contract">Writing the smart contract</a></h2>
+<p>To get started, create a new file called <code>DataFeeds.sol</code> inside your Foundry project.</p>
+<p>As mentioned earlier, to use Chainlink's price feeds service, you simply need to query the designated aggregator contract for the specific price feed you want to use.
+Since all of Chainlink's pricde feeds contracts are built on top of a single interface, we can use the same interface to interact with all of them.</p>
+<p>To get started, import the <code>AggregatorV3Interface</code> into your contract code:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import &quot;@chainlink/v0.8/interfaces/AggregatorV3Interface.sol&quot;;
+</code></pre>
+<p>Next, initialize a contract named <code>ChainlinkDataFeeds </code>:</p>
+<pre><code class="language-cpp">contract ChainlinkDataFeeds {
+    
+}
+</code></pre>
+<p>Inside the contract:</p>
+<ol>
+<li>Declare a variable of the type <code>AggregatorV3Interface</code>.</li>
+<li>Inside the constructor, initialize the new variable by passing the address of the aggregator contract you want to use.</li>
+</ol>
+<pre><code class="language-cpp">    AggregatorV3Interface internal immutable priceFeed;
+
+    constructor(address _priceFeed) {
+        priceFeed = AggregatorV3Interface(_priceFeed);
+    }
+</code></pre>
+<p>Finally, define a function named <code>getLatestPrice()</code> that performs an external call to the <code>latestRoundData()</code> function of the aggregator contract:</p>
+<pre><code class="language-cpp">    function getLatestPrice() public view returns (uint80 roundID, int price) {
+        (roundID, price ,,,) = priceFeed.latestRoundData();
+        return (roundID, price);
+    }
+</code></pre>
+<p>While we are only dealing with two values, the <code>latestRoundData()</code> function actually returns:</p>
+<ol>
+<li><code>roundId</code>: Chainlink's data feeds are updated with each 'round'. This value is the ID of the current round.</li>
+<li><code>answer</code>: The actual data returned by the data feed. While we are working with price feeds, this value could be anything, depending on the actual data feed you are working with.</li>
+<li><code>startedAt</code>: Unix timestamp of when the round started.</li>
+<li><code>updatedAt</code>: Unix timestamp of when the round was updated.</li>
+<li><code>answeredInRound</code>: <strong>Deprecated</strong></li>
+</ol>
+<p>And that is it for the contract. Before deploying it though, we need to be familiar with a few concepts related to Chainlink's price feeds:</p>
+<ol>
+<li>The complete reference for each price feed offered by Chainlink across all of its' networks can be found <a href="https://docs.chain.link/data-feeds/price-feeds/addresses">in their docs</a>.</li>
+<li>Different price feeds may vary in their level of precision. For example, on ETH mainnet, the price feed for <code>ETH/USD</code> returns the price in 8 decimals, while the price feed for <code>BTC/ETH</code> returns the price in 18 decimals.
+The result needs to be dividied by 10 to the power of the number of decimals to get the actual price.</li>
+<li>Each price feed has a set '<em>heartbeat</em>'. This is the default time interval between each update of the price feed.</li>
+<li>Each price also has a deviation threshold. If the price deviates from the previous price by more than this percentage, it is updated immediately.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlinkdatafeedstsol"><a class="header" href="#chainlinkdatafeedstsol">ChainlinkDataFeeds.t.sol</a></h1>
+<blockquote>
+<p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.t.sol">DataFeeds.t.sol</a> 💻</p>
+</blockquote>
+<p>Create a file named <code>ChainlinkDataFeeds.t.sol</code>. To check if our contract is correctly configured to read from Chainlink's aggregator contracts, we will take the help of the <code>MockV3Aggregator</code> contract.</p>
+<p>This contract will mock the behavior of the aggregator contracts, and will allow us to test our contract without having to deploy it to a testnet.
+If our contract can read from this mock aggregator contract, it will likely be able to read from the real aggregator contracts as well, since they are built on top of the same interface.</p>
+<p>To get started, create a file named <code>DataFeeds.t.sol</code>. Inside the file, make the following imports:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.19;
+
+import &quot;forge-std/Test.sol&quot;;
+import {ChainlinkDataFeeds} from &quot;./ChainlinkDataFeeds.sol&quot;;
+import {MockV3Aggregator} from &quot;@chainlink/v0.8/tests/MockV3Aggregator.sol&quot;;
+</code></pre>
+<p>Next, initialize a contract named <code>ChainlinkDataFeeds_test</code>:</p>
+<pre><code class="language-cpp">contract ChainlinkDataFeeds_test is Test {
+
+}
+</code></pre>
+<p>The <code>MockV3Aggregator</code> contract needs to be initialized with some dummy data. Declare the following state variables inside the <code>ChainlinkDataFeeds_test</code> contract:</p>
+<pre><code class="language-cpp">    // Configuring the base data for the mock aggregator
+    uint8 public _decimals = 8;
+    int256 public _initialAnswer = 10**18;
+
+    // Initializing the contract instances
+    ChainlinkDataFeeds public chainlinkDataFeeds;
+    MockV3Aggregator public mockV3aggregator;
+</code></pre>
+<p>The <code>setUp()</code> function is a special function that if often used while writing tests in Foundry.
+This function is executed by Forge before every single test function in a file.
+This allows us to set up an initial state that we can use to test our contracts on.</p>
+<pre><code class="language-cpp">    function setUp() public {
+
+        mockV3aggregator = new MockV3Aggregator(_decimals, _initialAnswer);
+        chainlinkDataFeeds = new ChainlinkDataFeeds(address(mockV3aggregator));
+    }
+</code></pre>
+<p>Finally, we define a function named <code>testgetLatestPrice()</code>.
+This function will call the <code>getLatestPrice()</code> function on our contract, which in turn calls the <code>latestRoundData()</code> function on the mock aggregator contract.
+We then check if the values returned by the <code>getLatestPrice()</code> function are the same as the values we initialized the mock aggregator contract with.</p>
+<p>If the values are in-line with what we expect, we can be certain that our contract is correctly configured to read from Chainlink's aggregator contracts.</p>
+<pre><code class="language-cpp">    function testgetLatestPrice() public {
+
+        (uint80 roundID, int256 price) = chainlinkDataFeeds.getLatestPrice();
+        
+        assertEq(price, _initialAnswer);
+        assertEq(roundID, 1);
+    }
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlink-vrf"><a class="header" href="#chainlink-vrf">Chainlink VRF</a></h1>
+<p><a href="https://docs.chain.link/docs/chainlink-vrf/">Chainlink VRF</a> is a Chainlink service that allows smart contracts to consume provably fair and verifiable random numbers.
+Blockchains by their nature are deterministic in nature, and therefore generating truly random numbers is nigh impossible.</p>
+<p>In this tutorial, we will write a simple smart contract that consumes Chainlink's VRF service to return one of these 3 random numbers:
+1, 2, or 3.</p>
+<ul>
+<li>We should get back <em><strong>1</strong></em> with a 1% probability.</li>
+<li>We should get back <em><strong>2</strong></em> with a 33% probability.</li>
+<li>We should get back <em><strong>3</strong></em> with a 66% probability.</li>
+</ul>
+<p>Briefly, here is how Chainlink's VRF service works:</p>
+<ol>
+<li>Your smart contract performs an external call on the VRF coordinator contract, by calling the <code>requestRandomWords()</code> function.</li>
+<li>This emits an event that is picked up by Chainlink's off-chain node network.</li>
+<li>The off-chain node network generates a random number and sends it back to the coordinator contract.</li>
+<li>The coordinator contract sends the generated random number(s) to your smart contract by calling the <code>fulfillRandomWords()</code> function on your smart contract, which you must implement. This serves as the callback function.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlinkvrfsol"><a class="header" href="#chainlinkvrfsol">ChainlinkVRF.sol</a></h1>
+<blockquote>
+<p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.sol">ChainlinkVRF.sol</a> 💻</p>
+</blockquote>
+<h2 id="creating-a-vrf-subscription"><a class="header" href="#creating-a-vrf-subscription">Creating a VRF subscription</a></h2>
+<p>Unlike the price feeds service, Chainlink VRF is not free to use.
+Each randomness request costs a certain amount of LINK tokens.</p>
+<p>There are two ways to pay for a VRF request:</p>
+<ol>
+<li><strong>Direct Funding:</strong> Your smart contract directly pays a small amount of LINK tokens with each request.</li>
+<li><strong>Subscription Method:</strong> You fund a single subscription with LINK tokens, and add your smart contracts as approved consumers of that subscription. Each time your smart contract makes a randomness request, the subscription is charged a small amount of LINK tokens.</li>
+</ol>
+<p>We will be using the subscription method in this tutorial.</p>
+<p>These are the steps to set up a VRF subscription:</p>
+<ol>
+<li>Make sure you have some LINK tokens in an EOA. You can get a few from <a href="https://faucets.chain.link/">Chainlink's faucet</a>.</li>
+<li>Go to <a href="https://vrf.chain.link/">vrf.chain.link</a> and create a new subscription. I will be working with the Sepolia testnet.</li>
+<li>Fund your subscription with some LINK tokens(50 should be more than enough).</li>
+</ol>
+<p>We are now ready to start writing our smart contract.</p>
+<h2 id="writing-the-smart-contract-1"><a class="header" href="#writing-the-smart-contract-1">Writing the smart contract</a></h2>
+<p>To get started, create a new file called <code>ChainlinkVRF.sol</code> inside your Foundry project.</p>
+<p>We need to import two things into our contract:</p>
+<ol>
+<li><code>VRFCoordinatorV2Interface</code>: Each network supported by Chainlink has an on-chain coordinator contract that handles all VRF requests. use this interface to interact with the coordinator contract.</li>
+<li><code>VRFConsumerBaseV2</code>: This is an abstract contract, which means this is an incomplete contract with at least one of its functions left unimplemented. We will inherit from this contract and implement the missing function, <code>fulfillRandomWords()</code>.</li>
+</ol>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import &quot;@chainlink/v0.8/interfaces/VRFCoordinatorV2Interface.sol&quot;;
+import &quot;@chainlink/v0.8/VRFConsumerBaseV2.sol&quot;;
+</code></pre>
+<p>Next, let us initialize a contract named <code>ChainlinkVRF</code>:</p>
+<pre><code class="language-cpp">contract ChainlinkVRF is VRFConsumerBaseV2 {
+
+}
+</code></pre>
+<p>To send a randomness request to Chainlink VRF, we need to configure a few variables. Let us take a look:</p>
+<ul>
+<li><code>keyHash</code>: Each <code>keyHash</code> is a hexadecimal value that represents a '<em>gas lane</em>'. Each gas lane costs a different amount of gas.</li>
+<li><code>subId</code>: The subscription ID of the subscription we created earlier.</li>
+<li><code>minimumRequestConfirmations</code>: The number of blocks you would like the off-chain node to wait before fulfilling your request. The higher this number, the more secure your randomness will be.</li>
+<li><code>callbackGasLimit</code>: How much gas would you like to be used on your callback function.</li>
+<li><code>numWords</code>: The number of <code>uint256</code> values you would like to receive. We will be requesting 1 word.</li>
+</ul>
+<blockquote>
+<p>📝  <strong>Note:</strong>
+All of these values will differ depending on the network you are working with. You can find the technical reference for all supported
+networks <a href="https://docs.chain.link/vrf/v2/subscription/supported-networks">here</a>.</p>
+</blockquote>
+<p>Let us configure these variables:</p>
+<pre><code class="language-cpp">    VRFCoordinatorV2Interface private CoordinatorInterface;
+    uint64 private _subscriptionId;
+    bytes32 private constant KEY_HASH = 0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c;
+    uint32 private constant CALLBACK_GAS_LIMIT = 100000;
+    uint16 private constant BLOCK_CONFIRMATIONS = 10;
+    uint32 private constant NUM_WORDS = 1;
+
+    // Variable to store the generated random number
+    uint256 public number;
+</code></pre>
+<p>The <code>CoordinatorInterface</code> and <code>_subscriptionId</code> variables will be initialized in the constructor.
+The <code>number</code> variable will store the generated random number.</p>
+<p>The constructor can be initialized as follows:</p>
+<pre><code class="language-cpp">    constructor(uint64 subscriptionId, address vrfCoordinatorV2Address) VRFConsumerBaseV2(vrfCoordinatorV2Address) {
+        _subscriptionId = subscriptionId;
+        CoordinatorInterface = VRFCoordinatorV2Interface(vrfCoordinatorV2Address);
+    }
+
+</code></pre>
+<p>Let us now define a function named <code>useChainlinkVRF()</code> that will send a randomness request to the Chainlink VRF coordinator contract.
+This function will send a randomness request to the coordinator contract, and return a <code>requestId</code> that will be used to identify the request.</p>
+<pre><code class="language-cpp">     function useChainlinkVRF() public returns (uint256 requestId) {
+        requestId = CoordinatorInterface.requestRandomWords(
+            KEY_HASH,
+            _subscriptionId,
+            BLOCK_CONFIRMATIONS,
+            CALLBACK_GAS_LIMIT,
+            NUM_WORDS
+        );
+        return requestId;
+    }
+</code></pre>
+<p>Lastly, we need to define the <code>fulfillRandomWords()</code> function. This function will be called by the Chainlink VRF coordinator contract once the randomness request has been fulfilled by the off-chain Chainlink node.</p>
+<p>We can modulo the huge random number we get back to trim it down to a desired range.
+Based on the number we get back, we will set the <code>number</code> variable to 1, 2, or 3.</p>
+<pre><code class="language-cpp">    function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override {
+
+        // To get a random number b/w 1 and 100 inclusive
+        uint256 randomNumber = (randomWords[0] % 100) + 1;
+
+        if(randomNumber == 100){
+            number = 1;
+        } else if(randomNumber % 3 == 0) {
+            number = 2;
+        } else {
+            number = 3;
+        }
+    }
+</code></pre>
+<p>And that's it for now.
+By calling the <code>useChainlinkVRF()</code> function on our contract, a user can get back a random number b/w 1 and 3 with a varying degree of probability.</p>
+<p>In the next section, we will use the <code>VRFCoordinatorV2Mock</code> to write a preliminary test for our VRF contract.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chainlinkvrftsol"><a class="header" href="#chainlinkvrftsol">ChainlinkVRF.t.sol</a></h1>
+<blockquote>
+<p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.t.sol">ChainlinkVRF.t.sol</a> 💻</p>
+</blockquote>
+<p>Create a file named <code>ChainlinkVRF.t.sol</code> inside your Foundry project.</p>
+<p>To test our VRF contract using the <code>VRFCoordinatorV2Mock</code>, set up the test file with the following imports:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.19;
+
+import &quot;forge-std/Test.sol&quot;;
+import {VRFCoordinatorV2Mock} from &quot;@chainlink/v0.8/mocks/VRFCoordinatorV2Mock.sol&quot;;
+import {ChainlinkVRF} from &quot;./ChainlinkVRF.sol&quot;;
+</code></pre>
+<p>Next, initialize a contract named <code>ChainlinkVRF_test</code>:</p>
+<pre><code class="language-cpp">contract ChainlinkVRF_test is Test {
+
+}
+</code></pre>
+<p>We need to declare a few state variables:</p>
+<pre><code class="language-cpp">    // Initializing the contract instances
+    ChainlinkVRF public chainlinkVRF;
+    VRFCoordinatorV2Mock public vrfCoordinatorV2Mock;
+
+    // These variables will keep a count of the number of times each
+    // random number number was generated
+    uint counter1; uint counter2; uint counter3;
+</code></pre>
+<p>The <code>counter1</code>, counter2<code>and</code>counter3<code>variables will keep a count of the number of times each of the respective random numbers was generated. Now let us define the</code>setUp()` function to set up the initial state:</p>
+<pre><code class="language-cpp">    function setUp() public {
+        vrfCoordinatorV2Mock = new VRFCoordinatorV2Mock(100000000000000000, 1000000000);
+        uint64 subId = vrfCoordinatorV2Mock.createSubscription();
+
+        //funding the subscription with 1000 LINK
+        vrfCoordinatorV2Mock.fundSubscription(subId, 1000000000000000000000);
+
+        chainlinkVRF = new ChainlinkVRF(subId, address(vrfCoordinatorV2Mock));
+        vrfCoordinatorV2Mock.addConsumer(subId, address(chainlinkVRF));
+    }
+</code></pre>
+<p>We do a few things here:</p>
+<ol>
+<li>We initialize a new <code>VRFCoordinatorV2Mock</code> contract with some dummy values.</li>
+<li>Then we programmatically create a new subscription and fund it with 1000 LINK tokens.</li>
+<li>Next, we initialize a new instance of the <code>ChainlinkVRF</code> contract.</li>
+<li>Finally, we add the <code>ChainlinkVRF</code> contract as an approved consumer of the subscription we created earlier.</li>
+</ol>
+<p>Let us now create a <code>testrequestRandomWords()</code> function to check if our contract is consuming the VRF service correctly.
+This will however be a slightly different test than the ones we have written before.</p>
+<p>This function will not have an assertion that it may or may not pass.
+Test functions written without any assertions <strong>always</strong> pass. We will however use the <code>console2</code> contract from Forge's test suite to log out the random numbers generated by our contract.</p>
+<p>We can check how many times each number was generated by looking at the <code>counter1</code>, <code>counter2</code> and <code>counter3</code> variables.
+This will help us see if the probability of the numbers being generated is along the desried lines.</p>
+<pre><code class="language-cpp">function testrequestRandomWords() public {
+
+        for(uint i = 0; i &lt; 1000; i++)
+        {                    
+            uint256 requestId = chainlinkVRF.requestRandomWords();
+            vrfCoordinatorV2Mock.fulfillRandomWords(requestId, address(chainlinkVRF));
+
+            if(chainlinkVRF.number() == 1){
+                counter1++;
+            } else if(chainlinkVRF.number() == 2){
+                counter2++;
+            } else {
+                counter3++;
+            }   
+        }
+
+        console2.log(&quot;Number of times 1 was generated: &quot;, counter1);
+        console2.log(&quot;Number of times 2 was generated: &quot;, counter2);
+        console2.log(&quot;Number of times 3 was generated: &quot;, counter3);
+    }
+</code></pre>
+<p>I can run the test file with this command:</p>
+<pre><code class="language-bash">forge test --match-path src/Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.t.sol -vv
+</code></pre>
+<p>Although the exact command may vary on how you have set up your project.
+Again, this test will always pass since it does not have any assertions.</p>
+<p>However we can derive conclusions by looking at the logged values.
+This is what the output of the test looks like on my terminal:</p>
+<img src="Applications/Chainlink/ChainlinkVRF/../../../images/ChainlinkVRF.t.sol_1.png" style="border-radius: 10px">
 
                     </main>
 
