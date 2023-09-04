@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Getting Started - Solidity in Foundry</title>
+        <title>Using a mock LZ endpoint - Solidity in Foundry</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -37,7 +37,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">About</a></li><li class="chapter-item expanded affix "><a href="GettingStarted.html" class="active">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">3.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">3.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">3.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">3.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">3.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">3.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">3.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="Applications/LayerZero/LayerZero.html"><strong aria-hidden="true">4.</strong> Layer Zero</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/LayerZero/lzMockEndpoint/lzMockEndpoint.html"><strong aria-hidden="true">4.1.</strong> Using a mock LZ endpoint</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html"><strong aria-hidden="true">4.1.1.</strong> LayerZero.sol</a></li><li class="chapter-item "><a href="Applications/LayerZero/lzMockEndpoint/LayerZero_test.html"><strong aria-hidden="true">4.1.2.</strong> LayerZero.t.sol</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="../../../Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">3.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">3.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">3.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">3.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">3.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">3.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">3.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../Applications/LayerZero/LayerZero.html"><strong aria-hidden="true">4.</strong> Layer Zero</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../Applications/LayerZero/lzMockEndpoint/lzMockEndpoint.html" class="active"><strong aria-hidden="true">4.1.</strong> Using a mock LZ endpoint</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html"><strong aria-hidden="true">4.1.1.</strong> LayerZero.sol</a></li><li class="chapter-item "><a href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_test.html"><strong aria-hidden="true">4.1.2.</strong> LayerZero.t.sol</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,7 +139,7 @@
                     <h1 class="menu-title">Solidity in Foundry</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/Genesis3800/Solidity-in-Foundry-mdbook" title="Git repository" aria-label="Git repository">
@@ -171,52 +171,27 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
-<p>To follow along, I highly recommend that you install <a href="https://github.com/foundry-rs/foundry">Foundry</a> on your system.
-The exact installation instructions might vary depending on your system, but the <a href="https://book.getfoundry.sh/" title="Foundry book">Foundry book</a> is quite comprehensive.</p>
-<p>Also, feel free to use <a href="https://remix.ethereum.org/">Remix</a> for an interactive UI to interact with your smart contracts, although I'll be using Foundry throughout.
-This will still be a useful resource for you if you decide to stick with Remix, which is more beginner friendly.</p>
-<p>Once you have all the CLI tools part of Foundry installed in your system, you can get started by creating a new directory and running:</p>
-<pre><code class="language-sh">$  forge init
-</code></pre>
-<blockquote>
-<p>📝  <strong>Note:</strong>
-Foundry is a modular toolchain that consists currently of 4 different CLI tools. We will primarily be using Forge throughout, but
-you can read more about each of these tools in the <a href="https://book.getfoundry.sh/">Foundry book</a>.</p>
-</blockquote>
-<p>You will notice a bunch of new files and directories. Here are the ones you primarily need to worry about for now:</p>
+                        <h1 id="testing-layerzero-contracts-using-a-mock-endpoint"><a class="header" href="#testing-layerzero-contracts-using-a-mock-endpoint">Testing LayerZero contracts using a mock endpoint</a></h1>
+<p>In this tutorial, we will:</p>
 <ol>
-<li>
-<p><strong>lib</strong>: This directory is where all your dependencies are stored. You will find yourself relying on Solidity code written by others much too often. This directory is where all of that will be stored.</p>
-</li>
-<li>
-<p><strong>src</strong>: The src directory is where you typically store all your smart contract code.</p>
-</li>
-<li>
-<p><strong>test</strong>: The test directory is where you typically store all your test files.</p>
-</li>
-<li>
-<p><strong>script</strong>: This is where you typically write scripts that deploy new smart contracts to the blockchain, and interact with existing ones.</p>
-</li>
-<li>
-<p><strong>foundry.toml</strong>: We can use the toml file to customise virtually all aspects of Foundry's behaviour.</p>
-</li>
+<li>Implement a simple example of cross-chain communication using two smart contracts.</li>
+<li>Test out the contracts using <code>LZEndpointMock.sol</code>.</li>
 </ol>
-<p>For now, to keep things simple, we will only be working with the src directory. All our code and tests will go inside this directory.</p>
-<p>To test if your Foundry project was properly initialized, run:</p>
-<pre><code class="language-sh">$  forge build
-</code></pre>
-<p>This command compiles all the Solidity files within the parent directory, not just the src directory. For now, Forge will simply compile the Solidity code that ships along with the default initialization of a Foundry project.</p>
+<h2 id="what-are-we-building"><a class="header" href="#what-are-we-building">What are we building?</a></h2>
+<p>We will implement two smart contracts, <code>OmniCounter_Mumbai</code> and <code>OmniCounter_Sepolia</code>, to be deployed on Mumbai and Sepolia respectively.</p>
+<p>Both of them have a state variable named <code>counter</code> declared, which is initialized to 0 by default.
+We want to leverage the LayerZero protocol so that when the <code>incrementCounter</code> function is called on either of the two contracts, the <code>counter</code> variable on the other contract is incremented by 1.</p>
+<p>This will require a cross-chain message to be sent using LayerZero, and we will check if our contracts are correctly configured to receive and process these messages using the <code>LZEndpointMock.sol</code> contract.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../../Applications/LayerZero/LayerZero.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="SolidityBasics/HelloWorld/HelloWorld.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -226,11 +201,11 @@ you can read more about each of these tools in the <a href="https://book.getfoun
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../../Applications/LayerZero/LayerZero.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="SolidityBasics/HelloWorld/HelloWorld.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -261,13 +236,13 @@ you can read more about each of these tools in the <a href="https://book.getfoun
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
 
         <!-- Custom JS scripts -->
 

@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>LayerZero.t.sol - Solidity in Foundry</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Learn Solidity from scratch, using Foundry from the very start.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="../../../Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">3.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">3.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">3.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">3.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">3.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">3.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="../../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">3.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../Applications/LayerZero/LayerZero.html"><strong aria-hidden="true">4.</strong> Layer Zero</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../Applications/LayerZero/lzMockEndpoint/lzMockEndpoint.html"><strong aria-hidden="true">4.1.</strong> Using a mock LZ endpoint</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html"><strong aria-hidden="true">4.1.1.</strong> LayerZero.sol</a></li><li class="chapter-item expanded "><a href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_test.html" class="active"><strong aria-hidden="true">4.1.2.</strong> LayerZero.t.sol</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Solidity in Foundry</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Genesis3800/Solidity-in-Foundry-mdbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="layerzerotsol"><a class="header" href="#layerzerotsol">LayerZero.t.sol</a></h1>
+<blockquote>
+<p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/Applications/LayerZero/lzMockEndpoint/OmniCounter.t.sol">OmniCounter.t.sol</a>💻</p>
+</blockquote>
+<h2 id="conceptual-detour"><a class="header" href="#conceptual-detour">Conceptual detour</a></h2>
+<p>Before diving into the test file, let us take a step back and think about what we are trying to do here.</p>
+<p>We are trying to mock the behavior of the LayerZero protocol on our local testnet. But does it not require a minimum of two blockchains to implement any actual cross-chain communication?
+Good point. 
+So let us think about it a little more.</p>
+<p>Here is what the flow of a cross-chain message looks like:
+<strong>Smart contract on Chain A -&gt; LayerZero Endpoint on Chain A -&gt; Relayer + Oracle -&gt; LayerZero Endpoint on Chain B -&gt; Smart contract on Chain B</strong></p>
+<p>Now, we can't really mock the behavior of the relayer and the oracle, but how do we set up a mock endpoint, that can impersonate the cross-chain behavior pattern of two endpoints on a single network?</p>
+<p>How about this:</p>
+<ol>
+<li>Smart contract number 1 on local network calls <code>send()</code> function on mock endpoint.</li>
+<li>Mock endpoint does NOT check the message's validity in any way.</li>
+<li>The mock endpoint simply calls the <code>_nonblockingLzReceive</code> on smart contract number 2.</li>
+</ol>
+<p>This process happens in reverse when smart contract number 2 calls the <code>send()</code> function on the mock endpoint.
+If our message passes from:</p>
+<p><strong>Smart contract number 1 -&gt; Mock Endpoint -&gt; Smart contract number 2</strong>, and vice-versa, then we can be reasonably assured that our contracts are correctly configured to interact with the LayerZero protocol.</p>
+<h2 id="setting-up-the-test-file"><a class="header" href="#setting-up-the-test-file">Setting up the test file</a></h2>
+<p>Create a file named <code>OmniCounter.t.sol</code> inside your Foundry project.</p>
+<p>To test our VRF contract using <code>LZEndpointMock</code>, set up the test file with the following imports:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.19;
+
+//Imports to use Foundry's testing and logging suite
+import {Test, console2} from &quot;forge-std/Test.sol&quot;;
+
+//Imports to use the LayerZero contracts
+import {LZEndpointMock} from &quot;@layerzero-contracts/mocks/LZEndpointMock.sol&quot;;
+import {OmniCounter_Sepolia} from &quot;./OmniCounter_Sepolia.sol&quot;;
+import {OmniCounter_Mumbai} from &quot;./OmniCounter_Mumbai.sol&quot;;
+</code></pre>
+<p>Next, initialize a contract named <code>OmniCounterTest</code>:</p>
+<pre><code class="language-cpp">contract OmniCounterTest is Test {
+
+}
+</code></pre>
+<p>Next, let us set up the state variables:</p>
+<pre><code class="language-cpp">
+    LZEndpointMock public lzEndpointMock;
+
+    OmniCounter_Sepolia public omniCounter_Sepolia;
+    OmniCounter_Mumbai public omniCounter_Mumbai;
+
+    //Assigning a random ChainId to the local network
+    uint16 public constant ChainId = 1221;
+</code></pre>
+<p>Let us set up the initial state using the <code>setUp()</code> function:</p>
+<pre><code class="language-cpp">    function setUp() public {
+
+        vm.deal(address(0x1), 100 ether);
+        vm.deal(address(0x2), 100 ether);
+        vm.deal(address(0x3), 100 ether);
+
+        vm.prank(address(0x1));
+        lzEndpointMock = new LZEndpointMock(ChainId);
+
+        vm.prank(address(0x2));
+        omniCounter_Sepolia = new OmniCounter_Sepolia(address(lzEndpointMock));
+
+        vm.prank(address(0x3));
+        omniCounter_Mumbai = new OmniCounter_Mumbai(address(lzEndpointMock));
+
+        vm.deal(address(lzEndpointMock), 100 ether);
+        vm.deal(address(omniCounter_Sepolia), 100 ether);
+        vm.deal(address(omniCounter_Mumbai), 100 ether);
+
+
+        vm.startPrank(address(0x1));
+        lzEndpointMock.setDestLzEndpoint(address(omniCounter_Sepolia), address(lzEndpointMock));
+        lzEndpointMock.setDestLzEndpoint(address(omniCounter_Mumbai), address(lzEndpointMock));
+        vm.stopPrank();
+        
+        bytes memory omniCounter_Mumbai_Address = abi.encodePacked(uint160(address(omniCounter_Mumbai)));
+        bytes memory omniCounter_Sepolia_Address = abi.encodePacked(uint160(address(omniCounter_Sepolia)));
+
+
+        vm.prank(address(0x2));
+        omniCounter_Sepolia.setTrustedRemoteAddress(ChainId, omniCounter_Mumbai_Address);
+
+        vm.prank(address(0x3));
+        omniCounter_Mumbai.setTrustedRemoteAddress(ChainId, omniCounter_Sepolia_Address);
+</code></pre>
+<p>This might seem overwhelming, but trust me, its' not. Let us break this down:</p>
+<ol>
+<li>The <code>deal</code> cheatcode is provided to us by Forge, and we can use it to bootstrap any address with some ETH.</li>
+<li>The <code>prank</code> cheatcode is also provided to us by Forge, and we can use it to impersonate any address. Any function call immediately proceeding a <code>prank</code> call will be executed as if it was called by the impersonated address.</li>
+<li>We initialize a new instance of the <code>LZEndpointMock</code> contract, followed by the initialization of the two OmniCounter contracts with the address of the mock endpoint.
+Note that all 3 of the contracts have different owners.</li>
+<li>We then transfer some ETH to the mock endpoint and the two OmniCounter contracts using the <code>deal</code> cheatcode.</li>
+<li>The <code>setDestLzEndpoint</code> is used to connect the OmniCounter contracts to the mock endpoint.</li>
+<li>The <code>setTrustedRemoteAddress</code> function is defined in the abstract contract we used to write our own contract, and is used to connect the two OmniCounter contracts to each other. Only contracts that have marked each other as trusted can send messages between them.</li>
+</ol>
+<blockquote>
+<p>📝 Note:
+Confused by <code>address(0x1)</code>, <code>address(0x2)</code> and <code>address(0x3)</code>?
+address(0x1) is the Ethereum address that corresponds to the hexadecimal value 0x0000000000000000000000000000000000000001.
+Any number can be typecasted into a hexadecimal value, which in turn can be padded by a number of zeroes to make it 20 bytes long. </p>
+</blockquote>
+<h3 id="sepolia-to-mumbai"><a class="header" href="#sepolia-to-mumbai">Sepolia to Mumbai</a></h3>
+<p>Let us now write a test function to check if we can increment the <code>counter</code> variable on the Mumbai testnet by calling the <code>incrementCounter</code> function on the Sepolia testnet.</p>
+<pre><code class="language-cpp">    /**
+     * @dev Tests the counter increment from Sepolia to Mumbai.
+    */
+    function test_SepoliaToMumbai() public {
+
+        uint counter_initial = omniCounter_Mumbai.counter();
+
+        vm.deal(address(0x10), 100 ether);
+        vm.prank(address(0x10));
+        omniCounter_Sepolia.incrementCounter{value: 1 ether}(ChainId);
+        assertEq(omniCounter_Mumbai.counter(), counter_initial+1);
+    }
+</code></pre>
+<p>This contract does a few things:</p>
+<ol>
+<li>First we record the initial value of the <code>counter</code> variable on the Mumbai testnet.</li>
+<li>Then we use the <code>deal</code> cheatcode to bootstrap a new address with some ETH.</li>
+<li>We then impersonate this address using the <code>prank</code> cheatcode.</li>
+<li>We then call the <code>incrementCounter</code> function on the Sepolia testnet, and send 1 ETH along with the function call.</li>
+<li>Finally, we check if the value of the <code>counter</code> variable on the Mumbai testnet has increased by 1.</li>
+</ol>
+<p>The test passes if the counter value increases by 1, otherwise it fails.</p>
+<h3 id="mumbai-to-sepolia"><a class="header" href="#mumbai-to-sepolia">Mumbai to Sepolia</a></h3>
+<p>We can write a similar test function to check if we can increment the <code>counter</code> variable on the Sepolia testnet by calling the <code>incrementCounter</code> function on the Mumbai testnet.</p>
+<pre><code class="language-cpp">    /**
+     * @dev Tests the counter increment from Mumbai to Sepolia.
+    */
+    function test_MumbaiToSepolia() public {
+
+        uint counter_initial = omniCounter_Sepolia.counter();
+
+        vm.deal(address(0x10), 100 ether);
+        vm.prank(address(0x10));
+        omniCounter_Mumbai.incrementCounter{value: 1 ether}(ChainId);
+        assertEq(omniCounter_Sepolia.counter(), counter_initial+1);
+    }
+</code></pre>
+<p>To run the tests, run the following command in your terminal:</p>
+<pre><code class="language-bash">forge test --match-path src/Applications/LayerZero/lzMockEndpoint/OmniCounter.t.sol -vvvv
+</code></pre>
+<p>Please note that the exact command will vary depending on your directory stubcture.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

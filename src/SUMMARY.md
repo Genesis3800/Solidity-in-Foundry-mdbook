@@ -22,3 +22,8 @@
   - [Chainlink VRF](./Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.md)
     - [VRF.sol](./Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.md)
     - [VRF.t.sol](./Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.md)
+
+- [Layer Zero](./Applications/LayerZero/LayerZero.md)
+  - [Using a mock LZ endpoint](./Applications/LayerZero/lzMockEndpoint/lzMockEndpoint.md)
+    - [LayerZero.sol](./Applications/LayerZero/lzMockEndpoint/LayerZero_contract.md)
+    - [LayerZero.t.sol](./Applications/LayerZero/lzMockEndpoint/LayerZero_test.md)
