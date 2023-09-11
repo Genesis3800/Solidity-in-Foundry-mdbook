@@ -25,6 +25,7 @@
   - [Chainlink Data Feeds](./Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.md)
     - [DataFeeds.sol](./Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.md)
     - [DataFeeds.t.sol](./Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.md)
+    - [DataFeeds.s.sol](./Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_deploy.md)
   - [Chainlink VRF](./Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.md)
     - [VRF.sol](./Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.md)
     - [VRF.t.sol](./Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.md)

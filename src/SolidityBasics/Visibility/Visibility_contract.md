@@ -30,7 +30,7 @@ contract Parent {
         return a+b;
     }
 
-    function internalAddition(uint a , uint b) internal pure virtual returns (uint) {
+    function internalAddition(uint a , uint b) internal pure returns (uint) {
         return a+b;
     }
 
@@ -50,14 +50,14 @@ contract Parent {
         return privateAddition(a , b);
     }
 
-    function callPublicAddition(uint a , uint b) public pure virtual returns (uint) {
+    function callPublicAddition(uint a , uint b) public pure returns (uint) {
         return publicAddition(a , b);
     }
 
-    function callInternalAddition(uint a , uint b) public pure virtual returns (uint) {
+    function callInternalAddition(uint a , uint b) public pure returns (uint) {
         return internalAddition(a , b);
     }
-
+ov
 }
 ```
 
