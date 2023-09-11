@@ -13,6 +13,12 @@
   - [Value Types](./SolidityBasics/TypesInSolidity/ValueTypes.md)
   - [Reference Types](./SolidityBasics/TypesInSolidity/ReferenceTypes.md)
 
+- [Visibility](./SolidityBasics/Visibility/Visibility.md)
+  - [Visibility.sol](./SolidityBasics/Visibility/Visibility_contract.md)
+  - [Visibility.t.sol](./SolidityBasics/Visibility/Visibility_test.md)
+
+- [Variable scopes in Solidity](./SolidityBasics/VariableScoping/VariableScoping.md)
+
 # Applications
 
 - [Chainlink](./Applications/Chainlink/Chainlink.md)

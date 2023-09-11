@@ -174,4 +174,4 @@ To run the tests, run the following command in your terminal:
 forge test --match-path src/Applications/LayerZero/lzMockEndpoint/OmniCounter.t.sol -vvvv
 ```
 
-Please note that the exact command will vary depending on your directory stubcture.
+Please note that the exact command will vary depending on your directory structure.

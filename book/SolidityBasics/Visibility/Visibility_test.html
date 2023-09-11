@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Reference Types - Solidity in Foundry</title>
+        <title>Visibility.t.sol - Solidity in Foundry</title>
 
 
         <!-- Custom HTML head -->
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html" class="active"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/Visibility/Visibility.html"><strong aria-hidden="true">3.</strong> Visibility</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/Visibility/Visibility_contract.html"><strong aria-hidden="true">3.1.</strong> Visibility.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/Visibility/Visibility_test.html"><strong aria-hidden="true">3.2.</strong> Visibility.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/VariableScoping/VariableScoping.html"><strong aria-hidden="true">4.</strong> Variable scopes in Solidity</a></li><li class="chapter-item expanded affix "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="../../Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">5.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">5.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">5.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">5.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">5.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">5.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">5.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../Applications/LayerZero/LayerZero.html"><strong aria-hidden="true">6.</strong> Layer Zero</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/LayerZero/lzMockEndpoint/lzMockEndpoint.html"><strong aria-hidden="true">6.1.</strong> Using a mock LZ endpoint</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html"><strong aria-hidden="true">6.1.1.</strong> LayerZero.sol</a></li><li class="chapter-item "><a href="../../Applications/LayerZero/lzMockEndpoint/LayerZero_test.html"><strong aria-hidden="true">6.1.2.</strong> LayerZero.t.sol</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">About</a></li><li class="chapter-item expanded affix "><a href="../../GettingStarted.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">Solidity Basics</li><li class="chapter-item expanded "><a href="../../SolidityBasics/HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_contract.html"><strong aria-hidden="true">1.1.</strong> HelloWorld.sol</a></li><li class="chapter-item "><a href="../../SolidityBasics/HelloWorld/HelloWorld_test.html"><strong aria-hidden="true">1.2.</strong> HelloWorld.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/TypesInSolidity/TypesInSolidity.html"><strong aria-hidden="true">2.</strong> Types in Solidity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ValueTypes.html"><strong aria-hidden="true">2.1.</strong> Value Types</a></li><li class="chapter-item "><a href="../../SolidityBasics/TypesInSolidity/ReferenceTypes.html"><strong aria-hidden="true">2.2.</strong> Reference Types</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/Visibility/Visibility.html"><strong aria-hidden="true">3.</strong> Visibility</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SolidityBasics/Visibility/Visibility_contract.html"><strong aria-hidden="true">3.1.</strong> Visibility.sol</a></li><li class="chapter-item expanded "><a href="../../SolidityBasics/Visibility/Visibility_test.html" class="active"><strong aria-hidden="true">3.2.</strong> Visibility.t.sol</a></li></ol></li><li class="chapter-item expanded "><a href="../../SolidityBasics/VariableScoping/VariableScoping.html"><strong aria-hidden="true">4.</strong> Variable scopes in Solidity</a></li><li class="chapter-item expanded affix "><li class="part-title">Applications</li><li class="chapter-item expanded "><a href="../../Applications/Chainlink/Chainlink.html"><strong aria-hidden="true">5.</strong> Chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.html"><strong aria-hidden="true">5.1.</strong> Chainlink Data Feeds</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds_contract.html"><strong aria-hidden="true">5.1.1.</strong> DataFeeds.sol</a></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDatafeeds_test.html"><strong aria-hidden="true">5.1.2.</strong> DataFeeds.t.sol</a></li></ol></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF.html"><strong aria-hidden="true">5.2.</strong> Chainlink VRF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_contract.html"><strong aria-hidden="true">5.2.1.</strong> VRF.sol</a></li><li class="chapter-item "><a href="../../Applications/Chainlink/ChainlinkVRF/ChainlinkVRF_test.html"><strong aria-hidden="true">5.2.2.</strong> VRF.t.sol</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../Applications/LayerZero/LayerZero.html"><strong aria-hidden="true">6.</strong> Layer Zero</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/LayerZero/lzMockEndpoint/lzMockEndpoint.html"><strong aria-hidden="true">6.1.</strong> Using a mock LZ endpoint</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Applications/LayerZero/lzMockEndpoint/LayerZero_contract.html"><strong aria-hidden="true">6.1.1.</strong> LayerZero.sol</a></li><li class="chapter-item "><a href="../../Applications/LayerZero/lzMockEndpoint/LayerZero_test.html"><strong aria-hidden="true">6.1.2.</strong> LayerZero.t.sol</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,18 +171,71 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="reference-types"><a class="header" href="#reference-types">Reference Types</a></h1>
-<p>To be Written soon</p>
+                        <h1 id="visibilitytsol"><a class="header" href="#visibilitytsol">Visibility.t.sol</a></h1>
+<blockquote>
+<p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/SolidityBasics/Visibility/Visibility.t.sol">Visibility.t.sol</a></p>
+</blockquote>
+<p>As usual, create a new file and import the required Solidity files to initialize the test contract:</p>
+<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.19;
+
+import {Test, console2} from &quot;forge-std/Test.sol&quot;;
+import &quot;./Visibility.sol&quot;;
+
+contract Visibility_test is Test {
+
+}
+</code></pre>
+<p>Now, define the <code>setup()</code> function that sets the initial state for each test function:</p>
+<pre><code class="language-cpp">    Child child;
+
+    function setUp() public {
+        child = new Child();
+    }
+</code></pre>
+<p>Next, make sure we can call the internal and public addition functions defined in the parent contract, from within the child contract:</p>
+<pre><code class="language-cpp">    function test_callInternalAdditionInParentFromChild() public {
+
+        uint a = 10; uint b = 20;
+        uint c = child.callInternalAdditionInParentFromChild(a , b);
+
+        // test passes if the value of (a + b) is returned correctly 
+        assertEq(c, 30);
+    }
+
+    function test_callPublicAdditionInParentFromChild() public {
+
+        uint a = 10; uint b = 20;
+        uint c = child.callPublicAdditionInParentFromChild(a , b);
+
+        // test passes if the value of (a + b) is returned correctly 
+        assertEq(c, 30);
+    }
+</code></pre>
+<p>Finally, let us see if we can call the internal string defined in the parent contract, from within the child contract:</p>
+<pre><code class="language-cpp">    function test_callInternalStringInParentFromChild() public {
+
+        string memory str = child.callInternalStringInParentFromChild();
+
+        // test passes if the value of internalString is returned correctly 
+        assertEq(str, &quot;Internal String&quot;);
+    }
+</code></pre>
+<p>To run the test file I need to run this command in my terminal:</p>
+<pre><code class="language-bash">forge test --match-path src/SolidityBasics/Visibility/Visibility.t.sol
+</code></pre>
+<p>Please note that the exact command will vary depending on your directory structure.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../SolidityBasics/Visibility/Visibility_contract.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../SolidityBasics/Visibility/Visibility.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../SolidityBasics/VariableScoping/VariableScoping.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -192,11 +245,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../SolidityBasics/TypesInSolidity/ValueTypes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../SolidityBasics/Visibility/Visibility_contract.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../SolidityBasics/Visibility/Visibility.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../SolidityBasics/VariableScoping/VariableScoping.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
