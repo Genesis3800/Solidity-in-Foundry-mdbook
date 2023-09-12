@@ -19,6 +19,12 @@
 
 - [Variable scopes in Solidity](./SolidityBasics/VariableScoping/VariableScoping.md)
 
+- [Interface](./SolidityBasics/Interfaces/Interfaces.md)
+  - [SimpleAddition.sol](./SolidityBasics/Interfaces/Interfaces_SimpleAddition_contract.md)
+  - [Interface_SimpleAddition.sol](./SolidityBasics/Interfaces/Interfaces_SimpleAddition_Interface.md)
+  - [UsingInterface.sol](./SolidityBasics/Interfaces/Interfaces_contract.md)
+  - [Interfaces.t.sol](./SolidityBasics/Interfaces/Interfaces_test.md)
+
 # Applications
 
 - [Chainlink](./Applications/Chainlink/Chainlink.md)
