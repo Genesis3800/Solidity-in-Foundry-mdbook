@@ -54,6 +54,8 @@ jobs:
       url: https://genesis3800.github.io/Solidity-in-Foundry-mdbook/
     runs-on: ubuntu-latest
     needs: build
+    branches-ignore:
+        - dev
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
