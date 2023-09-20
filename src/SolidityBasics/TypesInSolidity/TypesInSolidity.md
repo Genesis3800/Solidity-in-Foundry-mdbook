@@ -32,7 +32,7 @@ Solidity consists of the following reference types:
 
 Consider this bit of Solidity code:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -74,7 +74,7 @@ This won't change the value of `valueVar1`, since only a temporary copy of the v
 
 We can write a small test contract for the snippet as follows:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 

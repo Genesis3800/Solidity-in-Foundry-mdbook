@@ -9,7 +9,7 @@ We will write a simple smart contract that has two addition functions:
 
 In addition, we will have two simple functions that can be used to set new values for the aforementioned state variables.
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 

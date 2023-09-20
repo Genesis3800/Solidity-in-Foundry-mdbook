@@ -14,7 +14,7 @@ A complete reference to all global variables provided by Solidity can be found [
 
 Take a look at this code example for a clearer picture:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 

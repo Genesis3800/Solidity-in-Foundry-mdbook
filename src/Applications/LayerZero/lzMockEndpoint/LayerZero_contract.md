@@ -35,7 +35,7 @@ Let us start with `OmniCounter_Sepolia.sol`:
 Import the `NonblockingLzApp.sol` file. This file contains an abstract contract named `NonblockingLzApp`.
 We will implement the `_nonblockingLzReceive()` function in our contract, that was left undefined in the abstract contract.
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
@@ -46,7 +46,7 @@ import "@layerzero-contracts/lzApp/NonblockingLzApp.sol";
 
 Initialize the `OmniCounter_Sepolia` contract:
 
-```cpp
+```solidity
 /**
  * @title OmniCounter_Sepolia
  * @dev This contract represents the OmniCounter application on the Sepolia testnet.
@@ -64,7 +64,7 @@ We will define two state variables:
 
 We will also initialize the two constructors with the address of the on-chain LayerZero endpoint for Sepolia.
 
-```cpp
+```solidity
     bytes public constant PAYLOAD = "Sepolia_to_Mumbai";
     uint public counter;
 
@@ -81,7 +81,7 @@ Let us look at the parameters of the `send()` function:
 5. `bytes("")`: This param is used to tweak the default settings of our contract's interaction with the LayerZero protocol. We will not be using it in this tutorial.
 6. `msg.value`: The user calling `incrementCounter` needs to send some ETH along with the function call. This param keeps a track of the amount of ETH sent.
 
-```cpp
+```solidity
     function incrementCounter(uint16 _dstChainId) public payable {
         _lzSend(_dstChainId, PAYLOAD, payable(msg.sender), address(0x0), bytes(""), msg.value);
     }
@@ -90,7 +90,7 @@ Let us look at the parameters of the `send()` function:
 Next, we implement the `_nonblockingLzReceive` function. This function is called by the LayerZero endpoint when it receives a message that needs to be delivered to this contract.
 We an include whatever logic we want executed in response to the message receival in the function definition. In this case, we just increment the value of the counter variable.
 
-```cpp
+```solidity
         function _nonblockingLzReceive(uint16, bytes memory, uint64, bytes memory) internal override {
         counter += 1;
     }
@@ -101,7 +101,7 @@ Please note that this is an exceedingly simple implementation of the LayerZero p
 
 The `OmniCounter_Mumbai.sol` contract is almost identical. Paste the following code inside it:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
