@@ -31,7 +31,7 @@ We need to import two things into our contract:
 1. `VRFCoordinatorV2Interface`: Each network supported by Chainlink has an on-chain coordinator contract that handles all VRF requests. use this interface to interact with the coordinator contract.
 2. `VRFConsumerBaseV2`: This is an abstract contract, which means this is an incomplete contract with at least one of its functions left unimplemented. We will inherit from this contract and implement the missing function, `fulfillRandomWords()`.
 
-```cpp 
+```solidity 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -41,7 +41,7 @@ import "@chainlink/v0.8/VRFConsumerBaseV2.sol";
 
 Next, let us initialize a contract named `ChainlinkVRF`:
 
-```cpp
+```solidity
 contract ChainlinkVRF is VRFConsumerBaseV2 {
 
 }
@@ -61,7 +61,7 @@ To send a randomness request to Chainlink VRF, we need to configure a few variab
 
 Let us configure these variables:
 
-```cpp
+```solidity
     VRFCoordinatorV2Interface private CoordinatorInterface;
     uint64 private _subscriptionId;
     bytes32 private constant KEY_HASH = 0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c;
@@ -78,7 +78,7 @@ The `number` variable will store the generated random number.
 
 The constructor can be initialized as follows:
 
-```cpp
+```solidity
     constructor(uint64 subscriptionId, address vrfCoordinatorV2Address) VRFConsumerBaseV2(vrfCoordinatorV2Address) {
         _subscriptionId = subscriptionId;
         CoordinatorInterface = VRFCoordinatorV2Interface(vrfCoordinatorV2Address);
@@ -89,7 +89,7 @@ The constructor can be initialized as follows:
 Let us now define a function named `useChainlinkVRF()` that will send a randomness request to the Chainlink VRF coordinator contract.
 This function will send a randomness request to the coordinator contract, and return a `requestId` that will be used to identify the request.
 
-```cpp
+```solidity
      function useChainlinkVRF() public returns (uint256 requestId) {
         requestId = CoordinatorInterface.requestRandomWords(
             KEY_HASH,
@@ -107,7 +107,7 @@ Lastly, we need to define the `fulfillRandomWords()` function. This function wil
 We can modulo the huge random number we get back to trim it down to a desired range.
 Based on the number we get back, we will set the `number` variable to 1, 2, or 3.
 
-```cpp
+```solidity
     function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override {
 
         // To get a random number b/w 1 and 100 inclusive

@@ -32,7 +32,7 @@ Create a file named `OmniCounter.t.sol` inside your Foundry project.
 
 To test our VRF contract using `LZEndpointMock`, set up the test file with the following imports:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
@@ -47,7 +47,7 @@ import {OmniCounter_Mumbai} from "./OmniCounter_Mumbai.sol";
 
 Next, initialize a contract named `OmniCounterTest`:
 
-```cpp
+```solidity
 contract OmniCounterTest is Test {
 
 }
@@ -55,7 +55,7 @@ contract OmniCounterTest is Test {
 
 Next, let us set up the state variables:
 
-```cpp
+```solidity
 
     LZEndpointMock public lzEndpointMock;
 
@@ -68,7 +68,7 @@ Next, let us set up the state variables:
 
 Let us set up the initial state using the `setUp()` function:
 
-```cpp
+```solidity
     function setUp() public {
 
         vm.deal(address(0x1), 100 ether);
@@ -124,7 +124,7 @@ Note that all 3 of the contracts have different owners.
 
 Let us now write a test function to check if we can increment the `counter` variable on the Mumbai testnet by calling the `incrementCounter` function on the Sepolia testnet.
 
-```cpp
+```solidity
     /**
      * @dev Tests the counter increment from Sepolia to Mumbai.
     */
@@ -153,7 +153,7 @@ The test passes if the counter value increases by 1, otherwise it fails.
 
 We can write a similar test function to check if we can increment the `counter` variable on the Sepolia testnet by calling the `incrementCounter` function on the Mumbai testnet.
 
-```cpp
+```solidity
     /**
      * @dev Tests the counter increment from Mumbai to Sepolia.
     */

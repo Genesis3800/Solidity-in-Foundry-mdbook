@@ -4,7 +4,7 @@
 
 As usual, create a new file and import the required Solidity files to initialize the test contract:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
@@ -19,7 +19,7 @@ contract Visibility_test is Test {
 
 Now, define the `setup()` function that sets the initial state for each test function:
 
-```cpp
+```solidity
     Child child;
 
     function setUp() public {
@@ -29,7 +29,7 @@ Now, define the `setup()` function that sets the initial state for each test fun
 
 Next, make sure we can call the internal and public addition functions defined in the parent contract, from within the child contract:
 
-```cpp
+```solidity
     function test_callInternalAdditionInParentFromChild() public {
 
         uint a = 10; uint b = 20;
@@ -51,7 +51,7 @@ Next, make sure we can call the internal and public addition functions defined i
 
 Finally, let us see if we can call the internal string defined in the parent contract, from within the child contract:
 
-```cpp
+```solidity
     function test_callInternalStringInParentFromChild() public {
 
         string memory str = child.callInternalStringInParentFromChild();

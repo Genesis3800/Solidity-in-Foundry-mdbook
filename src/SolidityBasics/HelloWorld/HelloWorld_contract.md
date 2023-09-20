@@ -2,7 +2,7 @@
 
 The first line of almost all smart contracts starts something like this:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 ```
 
@@ -12,7 +12,7 @@ The first line of almost all smart contracts starts something like this:
 A full list of all SPDX licenses can be found [on their website](https://spdx.org/licenses/ "on their website").
 
 Paste this below the License identifier:
-```cpp
+```solidity
 pragma solidity ^0.8.19;
 ```
 - Every Solidity codebase must specify the versions of the [Solidity Compiler(solc)](https://www.npmjs.com/package/solc "Solidity Compiler(solc)") it is compatible with.
@@ -34,7 +34,7 @@ This is a way to specify the exact range of the solc you want to use in your con
 This way you can make sure your contract only compiles with a specific compiler version.
 
 Now we are ready to initialize a new smart contract using the `contract` keyword:
-```cpp
+```solidity
 contract HelloWorld { }
 ```
 All the code you write goes within these curly brackets.
@@ -46,12 +46,12 @@ All the code you write goes within these curly brackets.
 Our contract consists of a single string that returns the string "Hello world".
 Paste this within the curly brackets:
 
-```cpp
+```solidity
 string public greeting = "Hello World";
 ```
 
 And that's it. You created a Hello World smart contract. Your code should look something like this:
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;

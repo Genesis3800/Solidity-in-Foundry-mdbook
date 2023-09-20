@@ -34,7 +34,7 @@ Solidity allows us to initialize a variable of type `address` in two ways:
 
 Any integer can be typecasted into an address like this:
 
-```cpp
+```solidity
 address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
 ```
 In this case, the integer `1` will be treated as a `uint160`, which can be implicitly converted into an address type.
@@ -47,7 +47,7 @@ However, each member can be referenced directly by using its' explicit name.
 
 Consider this example:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -88,7 +88,7 @@ They are declared as:
 
 Here is a code snippet that demonstrates the use of fixed-size byte arrays:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 

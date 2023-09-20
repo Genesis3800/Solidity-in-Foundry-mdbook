@@ -188,12 +188,12 @@
 <p>Each '<em>test</em>' is a single function within a smart contract. These typically have a condition that has to be satisfied.
 If the condition is true, the test passes; otherwise it fails.</p>
 <p>Since <code>HelloWorld.t.sol</code> is basically another Solidity file from Forge's perspective, it will begin like other Solidity files do:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 </code></pre>
 <p>Next, we import two smart contracts into this file:</p>
-<pre><code class="language-cpp">import &quot;forge-std/Test.sol&quot;;
+<pre><code class="language-solidity">import &quot;forge-std/Test.sol&quot;;
 import &quot;./HelloWorld.sol&quot;;
 </code></pre>
 <ol>
@@ -206,22 +206,22 @@ Please note that Solidity as a language supports inheritance, but not all smart 
 Do not worry too much about how inheritance works, we will look into it in more detail later on.</p>
 </blockquote>
 <p>Next, we initialize the <code>HelloWorld_test</code> contract like this:</p>
-<pre><code class="language-cpp">contract HelloWorld_test is Test {
+<pre><code class="language-solidity">contract HelloWorld_test is Test {
 
 }
 </code></pre>
 <p>This is the contract that will contain all of our tests. We inherit from the <code>Test</code> contract, which allows us to use the testing suite.</p>
 <p>Next, we initialize a test function within the contract like this:</p>
-<pre><code class="language-cpp">    function testgreeting() public {
+<pre><code class="language-solidity">    function testgreeting() public {
     }
 </code></pre>
 <p>Within the function, create a new instance of the HelloWorld contract like this:</p>
-<pre><code class="language-cpp">   HelloWorld helloWorld = new HelloWorld();
+<pre><code class="language-solidity">   HelloWorld helloWorld = new HelloWorld();
 </code></pre>
 <p>We can now use the <code>helloWorld</code> variable to access the functions within the <code>HelloWorld</code> contract.
 Lastly we use <code>assertEq</code> to assert equality between two values. If the values are equal, the test passes; otherwise it fails.
 This is what the test function should look like:</p>
-<pre><code class="language-cpp">    function testgreeting() public {
+<pre><code class="language-solidity">    function testgreeting() public {
         HelloWorld helloWorld = new HelloWorld();
         assertEq(helloWorld.greeting(), &quot;Hello World&quot;);
     }
@@ -302,6 +302,7 @@ Now there's a variety of different ways to write more complex and comprehensive 
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
+        <script src="../../src/static/solidity.min.js"></script>
 
 
     </div>

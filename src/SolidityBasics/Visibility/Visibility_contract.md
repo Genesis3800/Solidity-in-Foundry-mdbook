@@ -6,7 +6,7 @@ Let us define a few state variables and functions of different visibility types.
 
 Define the main contract like this:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -63,7 +63,7 @@ ov
 
 Now let us define a child contract that inherits from the main contract, and calls a few of the functions and variables defined in the main contract.
 
-```cpp
+```solidity
 contract Child is Parent {
 
     /**

@@ -4,7 +4,7 @@
 
 Let us write the `UsingInterface.sol`, that will use the `Interface_SimpleAddition` to call functions on the `SimpleAddition` contract.
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 

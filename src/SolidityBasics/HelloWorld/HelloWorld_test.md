@@ -7,14 +7,14 @@ If the condition is true, the test passes; otherwise it fails.
 
 Since `HelloWorld.t.sol` is basically another Solidity file from Forge's perspective, it will begin like other Solidity files do:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 ```
 Next, we import two smart contracts into this file:
 
-```cpp
+```solidity
 import "forge-std/Test.sol";
 import "./HelloWorld.sol";
 ```
@@ -27,7 +27,7 @@ import "./HelloWorld.sol";
 
 Next, we initialize the `HelloWorld_test` contract like this:
 
-```cpp
+```solidity
 contract HelloWorld_test is Test {
 
 }
@@ -36,21 +36,21 @@ This is the contract that will contain all of our tests. We inherit from the `Te
 
 Next, we initialize a test function within the contract like this:
 
-```cpp
+```solidity
     function testgreeting() public {
     }
 ```
 
 Within the function, create a new instance of the HelloWorld contract like this:
 
-```cpp
+```solidity
    HelloWorld helloWorld = new HelloWorld();
 ```
 We can now use the `helloWorld` variable to access the functions within the `HelloWorld` contract.
 Lastly we use `assertEq` to assert equality between two values. If the values are equal, the test passes; otherwise it fails.
 This is what the test function should look like:
 
-```cpp
+```solidity
     function testgreeting() public {
         HelloWorld helloWorld = new HelloWorld();
         assertEq(helloWorld.greeting(), "Hello World");

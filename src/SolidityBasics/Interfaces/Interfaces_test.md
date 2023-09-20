@@ -4,7 +4,7 @@
 
 As usual, start by importing all the required files:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
@@ -20,7 +20,7 @@ contract UsingInterface_test is Test {
 
 Next, define the `setup()` function that sets the initial state for each test function:
 
-```cpp
+```solidity
     SimpleAddition public simpleAddition;
     UsingInterface public usingInterface;
 
@@ -34,7 +34,7 @@ Next, define the `setup()` function that sets the initial state for each test fu
 Note that we use the address of the `SimpleAddition` contract to initialize the `UsingInterface` contract.
 Next, let us write two test functions to check if we can change the values the state variables:
 
-```cpp
+```solidity
     function test_setA() public {
         usingInterface.setA(1);
         assertEq(simpleAddition.a(), 1, "Value of `a` in SimpleAddition should be 1");
@@ -48,7 +48,7 @@ Next, let us write two test functions to check if we can change the values the s
 
 Finally, let us write test functions to check if we can call the addition functions defined in the `SimpleAddition` contract. We want to make sure that the 
 
-```cpp
+```solidity
     // The values of `a` and `b` were set as 10 and 20 respectively
     // in the `SimpleAddition` contract. Thus, the sum should be 30
     // if we call the `returnSumOfStateVariables()` function without

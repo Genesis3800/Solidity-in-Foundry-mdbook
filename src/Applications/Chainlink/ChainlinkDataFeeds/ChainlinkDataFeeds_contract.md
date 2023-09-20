@@ -54,7 +54,7 @@ Since all of Chainlink's pricde feeds contracts are built on top of a single int
 
 To get started, import the `AggregatorV3Interface` into your contract code:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -63,7 +63,7 @@ import "@chainlink/v0.8/interfaces/AggregatorV3Interface.sol";
 
 Next, initialize a contract named `ChainlinkDataFeeds `:
 
-```cpp
+```solidity
 contract ChainlinkDataFeeds {
     
 }
@@ -74,7 +74,7 @@ Inside the contract:
 1. Declare a variable of the type `AggregatorV3Interface`.
 2. Inside the constructor, initialize the new variable by passing the address of the aggregator contract you want to use.
 
-```cpp
+```solidity
     AggregatorV3Interface internal immutable priceFeed;
 
     constructor(address _priceFeed) {
@@ -84,7 +84,7 @@ Inside the contract:
 
 Finally, define a function named `getLatestPrice()` that performs an external call to the `latestRoundData()` function of the aggregator contract:
 
-```cpp
+```solidity
     function getLatestPrice() public view returns (uint80 roundID, int price) {
         (roundID, price ,,,) = priceFeed.latestRoundData();
         return (roundID, price);

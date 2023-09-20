@@ -35,7 +35,7 @@ Let us now write a script to deploy the data feeds contract.
 
 Create a file named `ChainlinkDataFeeds.s.sol`, and initialize a deployment contract like this:
 
-```cpp
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
@@ -49,7 +49,7 @@ contract DeployDataFeed is Script {
 
 This contract is executed using the `forge script` command. Next, within the `DeployDataFeeds` contract, initialize an instance of the data feeds contract, and define a function named `run()`:
 
-```cpp
+```solidity
  ChainlinkDataFeeds chainlinkDataFeeds;
 
     function run() external {

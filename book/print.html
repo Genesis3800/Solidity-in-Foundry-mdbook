@@ -271,7 +271,7 @@ This directory will contain all the code related to the Hello World contract. Ea
 <p>You are now ready to write your first smart contract in Solidity, and learn about what all goes inside a bare-bones smart contract.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="helloworldsol"><a class="header" href="#helloworldsol">HelloWorld.sol</a></h2>
 <p>The first line of almost all smart contracts starts something like this:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 </code></pre>
 <ul>
 <li>
@@ -283,7 +283,7 @@ A full list of all SPDX licenses can be found <a href="https://spdx.org/licenses
 </li>
 </ul>
 <p>Paste this below the License identifier:</p>
-<pre><code class="language-cpp">pragma solidity ^0.8.19;
+<pre><code class="language-solidity">pragma solidity ^0.8.19;
 </code></pre>
 <ul>
 <li>Every Solidity codebase must specify the versions of the <a href="https://www.npmjs.com/package/solc" title="Solidity Compiler(solc)">Solidity Compiler(solc)</a> it is compatible with.</li>
@@ -309,7 +309,7 @@ This way you can make sure your contract only compiles with a specific compiler 
 </li>
 </ol>
 <p>Now we are ready to initialize a new smart contract using the <code>contract</code> keyword:</p>
-<pre><code class="language-cpp">contract HelloWorld { }
+<pre><code class="language-solidity">contract HelloWorld { }
 </code></pre>
 <p>All the code you write goes within these curly brackets.</p>
 <blockquote>
@@ -319,10 +319,10 @@ Pragma defines the Solidity version for the entire file, not a single contract.<
 </blockquote>
 <p>Our contract consists of a single string that returns the string &quot;Hello world&quot;.
 Paste this within the curly brackets:</p>
-<pre><code class="language-cpp">string public greeting = &quot;Hello World&quot;;
+<pre><code class="language-solidity">string public greeting = &quot;Hello World&quot;;
 </code></pre>
 <p>And that's it. You created a Hello World smart contract. Your code should look something like this:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 
@@ -343,12 +343,12 @@ If you've reached this far, and want to write a corresponding test for this cont
 <p>Each '<em>test</em>' is a single function within a smart contract. These typically have a condition that has to be satisfied.
 If the condition is true, the test passes; otherwise it fails.</p>
 <p>Since <code>HelloWorld.t.sol</code> is basically another Solidity file from Forge's perspective, it will begin like other Solidity files do:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 </code></pre>
 <p>Next, we import two smart contracts into this file:</p>
-<pre><code class="language-cpp">import &quot;forge-std/Test.sol&quot;;
+<pre><code class="language-solidity">import &quot;forge-std/Test.sol&quot;;
 import &quot;./HelloWorld.sol&quot;;
 </code></pre>
 <ol>
@@ -361,22 +361,22 @@ Please note that Solidity as a language supports inheritance, but not all smart 
 Do not worry too much about how inheritance works, we will look into it in more detail later on.</p>
 </blockquote>
 <p>Next, we initialize the <code>HelloWorld_test</code> contract like this:</p>
-<pre><code class="language-cpp">contract HelloWorld_test is Test {
+<pre><code class="language-solidity">contract HelloWorld_test is Test {
 
 }
 </code></pre>
 <p>This is the contract that will contain all of our tests. We inherit from the <code>Test</code> contract, which allows us to use the testing suite.</p>
 <p>Next, we initialize a test function within the contract like this:</p>
-<pre><code class="language-cpp">    function testgreeting() public {
+<pre><code class="language-solidity">    function testgreeting() public {
     }
 </code></pre>
 <p>Within the function, create a new instance of the HelloWorld contract like this:</p>
-<pre><code class="language-cpp">   HelloWorld helloWorld = new HelloWorld();
+<pre><code class="language-solidity">   HelloWorld helloWorld = new HelloWorld();
 </code></pre>
 <p>We can now use the <code>helloWorld</code> variable to access the functions within the <code>HelloWorld</code> contract.
 Lastly we use <code>assertEq</code> to assert equality between two values. If the values are equal, the test passes; otherwise it fails.
 This is what the test function should look like:</p>
-<pre><code class="language-cpp">    function testgreeting() public {
+<pre><code class="language-solidity">    function testgreeting() public {
         HelloWorld helloWorld = new HelloWorld();
         assertEq(helloWorld.greeting(), &quot;Hello World&quot;);
     }
@@ -423,7 +423,7 @@ Solidity consists of the following reference types:</p>
 <li>Mappings (<em><code>mapping</code></em>)</li>
 </ul>
 <p>Consider this bit of Solidity code:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 contract ValueType_vs_ReferenceType {
@@ -465,7 +465,7 @@ This won't change the value of <code>valueVar1</code>, since only a temporary co
 </li>
 </ol>
 <p>We can write a small test contract for the snippet as follows:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 import {Test, console2} from &quot;forge-std/Test.sol&quot;;
@@ -534,7 +534,7 @@ But strictly speaking, the address itself is 40 characters.</p>
 <li><code>address payable</code>: Any address variable initialzed with the <code>payable</code> keyword comes with two additional functions, <code>transfer()</code> and <code>send()</code>, that allow us to send ETH to the address.</li>
 </ul>
 <p>Any integer can be typecasted into an address like this:</p>
-<pre><code class="language-cpp">address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
+<pre><code class="language-solidity">address(1) == address(0x1) == 0x0000000000000000000000000000000000000001
 </code></pre>
 <p>In this case, the integer <code>1</code> will be treated as a <code>uint160</code>, which can be implicitly converted into an address type.</p>
 <h2 id="enums"><a class="header" href="#enums">Enums</a></h2>
@@ -542,7 +542,7 @@ But strictly speaking, the address itself is 40 characters.</p>
 Each member of an enum corresponds to an integer value, starting from 0.
 However, each member can be referenced directly by using its' explicit name.</p>
 <p>Consider this example:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 contract TestEnum {
@@ -577,7 +577,7 @@ They are declared as:
 All byte variables come with a <code>length</code> property that can be used to get the length of the bytes array.</p>
 </blockquote>
 <p>Here is a code snippet that demonstrates the use of fixed-size byte arrays:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 contract ByteContract {
@@ -620,7 +620,7 @@ Variables can be marked as <code>public</code>, <code>private</code>, or <code>i
 </blockquote>
 <p>Let us define a few state variables and functions of different visibility types. We will then call a few of them from a contract that inherits from our main contract.</p>
 <p>Define the main contract like this:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 contract Parent {
@@ -674,7 +674,7 @@ ov
 }
 </code></pre>
 <p>Now let us define a child contract that inherits from the main contract, and calls a few of the functions and variables defined in the main contract.</p>
-<pre><code class="language-cpp">contract Child is Parent {
+<pre><code class="language-solidity">contract Child is Parent {
 
     /**
      * @dev We cannot call private or external functions from inside a child contract.          
@@ -705,7 +705,7 @@ We will learn how to call external functions in the interfaces section.</p>
 <p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/SolidityBasics/Visibility/Visibility.t.sol">Visibility.t.sol</a></p>
 </blockquote>
 <p>As usual, create a new file and import the required Solidity files to initialize the test contract:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 
@@ -717,14 +717,14 @@ contract Visibility_test is Test {
 }
 </code></pre>
 <p>Now, define the <code>setup()</code> function that sets the initial state for each test function:</p>
-<pre><code class="language-cpp">    Child child;
+<pre><code class="language-solidity">    Child child;
 
     function setUp() public {
         child = new Child();
     }
 </code></pre>
 <p>Next, make sure we can call the internal and public addition functions defined in the parent contract, from within the child contract:</p>
-<pre><code class="language-cpp">    function test_callInternalAdditionInParentFromChild() public {
+<pre><code class="language-solidity">    function test_callInternalAdditionInParentFromChild() public {
 
         uint a = 10; uint b = 20;
         uint c = child.callInternalAdditionInParentFromChild(a , b);
@@ -743,7 +743,7 @@ contract Visibility_test is Test {
     }
 </code></pre>
 <p>Finally, let us see if we can call the internal string defined in the parent contract, from within the child contract:</p>
-<pre><code class="language-cpp">    function test_callInternalStringInParentFromChild() public {
+<pre><code class="language-solidity">    function test_callInternalStringInParentFromChild() public {
 
         string memory str = child.callInternalStringInParentFromChild();
 
@@ -773,7 +773,7 @@ A complete reference to all global variables provided by Solidity can be found <
 </li>
 </ol>
 <p>Take a look at this code example for a clearer picture:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 contract VariableScopesInSolidity {
@@ -838,7 +838,7 @@ All function declarations in an interface must be marked external, even if the u
 <li>An addition function that returns the sum of the two public state variables.</li>
 </ol>
 <p>In addition, we will have two simple functions that can be used to set new values for the aforementioned state variables.</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 /**
@@ -888,7 +888,7 @@ contract SimpleAddition {
 <li>All function declarations must be marked external, and must configure the param and return types exactly as they are in the contract.</li>
 <li>No function will have any sort of definition.</li>
 </ol>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 /**
@@ -913,7 +913,7 @@ interface Interface_SimpleAddition {
 <p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/SolidityBasics/Interfaces/UsingInterface.sol">UsingInterface.sol</a></p>
 </blockquote>
 <p>Let us write the <code>UsingInterface.sol</code>, that will use the <code>Interface_SimpleAddition</code> to call functions on the <code>SimpleAddition</code> contract.</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 /* Note that we only import the interface, not the actual contract
@@ -959,7 +959,7 @@ contract UsingInterface {
 <p>💻 The code corresponding to this page can be found on Github at <a href="https://github.com/Genesis3800/Solidity-in-Foundry-Repo/blob/main/src/SolidityBasics/Interfaces/Interfaces.t.sol">Interfaces.t.sol</a></p>
 </blockquote>
 <p>As usual, start by importing all the required files:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 
@@ -972,7 +972,7 @@ contract UsingInterface_test is Test {
 }
 </code></pre>
 <p>Next, define the <code>setup()</code> function that sets the initial state for each test function:</p>
-<pre><code class="language-cpp">    SimpleAddition public simpleAddition;
+<pre><code class="language-solidity">    SimpleAddition public simpleAddition;
     UsingInterface public usingInterface;
 
     function setUp() public {
@@ -983,7 +983,7 @@ contract UsingInterface_test is Test {
 </code></pre>
 <p>Note that we use the address of the <code>SimpleAddition</code> contract to initialize the <code>UsingInterface</code> contract.
 Next, let us write two test functions to check if we can change the values the state variables:</p>
-<pre><code class="language-cpp">    function test_setA() public {
+<pre><code class="language-solidity">    function test_setA() public {
         usingInterface.setA(1);
         assertEq(simpleAddition.a(), 1, &quot;Value of `a` in SimpleAddition should be 1&quot;);
     }
@@ -994,7 +994,7 @@ Next, let us write two test functions to check if we can change the values the s
     }
 </code></pre>
 <p>Finally, let us write test functions to check if we can call the addition functions defined in the <code>SimpleAddition</code> contract. We want to make sure that the </p>
-<pre><code class="language-cpp">    // The values of `a` and `b` were set as 10 and 20 respectively
+<pre><code class="language-solidity">    // The values of `a` and `b` were set as 10 and 20 respectively
     // in the `SimpleAddition` contract. Thus, the sum should be 30
     // if we call the `returnSumOfStateVariables()` function without
     // changing the values of `a` and `b` first.
@@ -1071,13 +1071,13 @@ For now, delete everything inside the default remappings file and add the follow
 <p>As mentioned earlier, to use Chainlink's price feeds service, you simply need to query the designated aggregator contract for the specific price feed you want to use.
 Since all of Chainlink's pricde feeds contracts are built on top of a single interface, we can use the same interface to interact with all of them.</p>
 <p>To get started, import the <code>AggregatorV3Interface</code> into your contract code:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 import &quot;@chainlink/v0.8/interfaces/AggregatorV3Interface.sol&quot;;
 </code></pre>
 <p>Next, initialize a contract named <code>ChainlinkDataFeeds </code>:</p>
-<pre><code class="language-cpp">contract ChainlinkDataFeeds {
+<pre><code class="language-solidity">contract ChainlinkDataFeeds {
     
 }
 </code></pre>
@@ -1086,14 +1086,14 @@ import &quot;@chainlink/v0.8/interfaces/AggregatorV3Interface.sol&quot;;
 <li>Declare a variable of the type <code>AggregatorV3Interface</code>.</li>
 <li>Inside the constructor, initialize the new variable by passing the address of the aggregator contract you want to use.</li>
 </ol>
-<pre><code class="language-cpp">    AggregatorV3Interface internal immutable priceFeed;
+<pre><code class="language-solidity">    AggregatorV3Interface internal immutable priceFeed;
 
     constructor(address _priceFeed) {
         priceFeed = AggregatorV3Interface(_priceFeed);
     }
 </code></pre>
 <p>Finally, define a function named <code>getLatestPrice()</code> that performs an external call to the <code>latestRoundData()</code> function of the aggregator contract:</p>
-<pre><code class="language-cpp">    function getLatestPrice() public view returns (uint80 roundID, int price) {
+<pre><code class="language-solidity">    function getLatestPrice() public view returns (uint80 roundID, int price) {
         (roundID, price ,,,) = priceFeed.latestRoundData();
         return (roundID, price);
     }
@@ -1122,7 +1122,7 @@ The result needs to be dividied by 10 to the power of the number of decimals to 
 <p>This contract will mock the behavior of the aggregator contracts, and will allow us to test our contract without having to deploy it to a testnet.
 If our contract can read from this mock aggregator contract, it will likely be able to read from the real aggregator contracts as well, since they are built on top of the same interface.</p>
 <p>To get started, create a file named <code>DataFeeds.t.sol</code>. Inside the file, make the following imports:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 
@@ -1131,12 +1131,12 @@ import {ChainlinkDataFeeds} from &quot;./ChainlinkDataFeeds.sol&quot;;
 import {MockV3Aggregator} from &quot;@chainlink/v0.8/tests/MockV3Aggregator.sol&quot;;
 </code></pre>
 <p>Next, initialize a contract named <code>ChainlinkDataFeeds_test</code>:</p>
-<pre><code class="language-cpp">contract ChainlinkDataFeeds_test is Test {
+<pre><code class="language-solidity">contract ChainlinkDataFeeds_test is Test {
 
 }
 </code></pre>
 <p>The <code>MockV3Aggregator</code> contract needs to be initialized with some dummy data. Declare the following state variables inside the <code>ChainlinkDataFeeds_test</code> contract:</p>
-<pre><code class="language-cpp">    // Configuring the base data for the mock aggregator
+<pre><code class="language-solidity">    // Configuring the base data for the mock aggregator
     uint8 public _decimals = 8;
     int256 public _initialAnswer = 10**18;
 
@@ -1147,7 +1147,7 @@ import {MockV3Aggregator} from &quot;@chainlink/v0.8/tests/MockV3Aggregator.sol&
 <p>The <code>setUp()</code> function is a special function that if often used while writing tests in Foundry.
 This function is executed by Forge before every single test function in a file.
 This allows us to set up an initial state that we can use to test our contracts on.</p>
-<pre><code class="language-cpp">    function setUp() public {
+<pre><code class="language-solidity">    function setUp() public {
 
         mockV3aggregator = new MockV3Aggregator(_decimals, _initialAnswer);
         chainlinkDataFeeds = new ChainlinkDataFeeds(address(mockV3aggregator));
@@ -1157,7 +1157,7 @@ This allows us to set up an initial state that we can use to test our contracts 
 This function will call the <code>getLatestPrice()</code> function on our contract, which in turn calls the <code>latestRoundData()</code> function on the mock aggregator contract.
 We then check if the values returned by the <code>getLatestPrice()</code> function are the same as the values we initialized the mock aggregator contract with.</p>
 <p>If the values are in-line with what we expect, we can be certain that our contract is correctly configured to read from Chainlink's aggregator contracts.</p>
-<pre><code class="language-cpp">    function testgetLatestPrice() public {
+<pre><code class="language-solidity">    function testgetLatestPrice() public {
 
         (uint80 roundID, int256 price) = chainlinkDataFeeds.getLatestPrice();
         
@@ -1198,7 +1198,7 @@ Ideally you should be using a hardware wallet, and/or an encrypted keystore.
 But for the sake of simplicity, I'll be using a dotenv file throughout.</p>
 </blockquote>
 <p>Create a file named <code>ChainlinkDataFeeds.s.sol</code>, and initialize a deployment contract like this:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: UNLICENSED
+<pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
 import &quot;forge-std/Script.sol&quot;;
@@ -1209,7 +1209,7 @@ contract DeployDataFeed is Script {
 }
 </code></pre>
 <p>This contract is executed using the <code>forge script</code> command. Next, within the <code>DeployDataFeeds</code> contract, initialize an instance of the data feeds contract, and define a function named <code>run()</code>:</p>
-<pre><code class="language-cpp"> ChainlinkDataFeeds chainlinkDataFeeds;
+<pre><code class="language-solidity"> ChainlinkDataFeeds chainlinkDataFeeds;
 
     function run() external {
         
@@ -1295,14 +1295,14 @@ Each randomness request costs a certain amount of LINK tokens.</p>
 <li><code>VRFCoordinatorV2Interface</code>: Each network supported by Chainlink has an on-chain coordinator contract that handles all VRF requests. use this interface to interact with the coordinator contract.</li>
 <li><code>VRFConsumerBaseV2</code>: This is an abstract contract, which means this is an incomplete contract with at least one of its functions left unimplemented. We will inherit from this contract and implement the missing function, <code>fulfillRandomWords()</code>.</li>
 </ol>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 import &quot;@chainlink/v0.8/interfaces/VRFCoordinatorV2Interface.sol&quot;;
 import &quot;@chainlink/v0.8/VRFConsumerBaseV2.sol&quot;;
 </code></pre>
 <p>Next, let us initialize a contract named <code>ChainlinkVRF</code>:</p>
-<pre><code class="language-cpp">contract ChainlinkVRF is VRFConsumerBaseV2 {
+<pre><code class="language-solidity">contract ChainlinkVRF is VRFConsumerBaseV2 {
 
 }
 </code></pre>
@@ -1320,7 +1320,7 @@ All of these values will differ depending on the network you are working with. Y
 networks <a href="https://docs.chain.link/vrf/v2/subscription/supported-networks">here</a>.</p>
 </blockquote>
 <p>Let us configure these variables:</p>
-<pre><code class="language-cpp">    VRFCoordinatorV2Interface private CoordinatorInterface;
+<pre><code class="language-solidity">    VRFCoordinatorV2Interface private CoordinatorInterface;
     uint64 private _subscriptionId;
     bytes32 private constant KEY_HASH = 0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c;
     uint32 private constant CALLBACK_GAS_LIMIT = 100000;
@@ -1333,7 +1333,7 @@ networks <a href="https://docs.chain.link/vrf/v2/subscription/supported-networks
 <p>The <code>CoordinatorInterface</code> and <code>_subscriptionId</code> variables will be initialized in the constructor.
 The <code>number</code> variable will store the generated random number.</p>
 <p>The constructor can be initialized as follows:</p>
-<pre><code class="language-cpp">    constructor(uint64 subscriptionId, address vrfCoordinatorV2Address) VRFConsumerBaseV2(vrfCoordinatorV2Address) {
+<pre><code class="language-solidity">    constructor(uint64 subscriptionId, address vrfCoordinatorV2Address) VRFConsumerBaseV2(vrfCoordinatorV2Address) {
         _subscriptionId = subscriptionId;
         CoordinatorInterface = VRFCoordinatorV2Interface(vrfCoordinatorV2Address);
     }
@@ -1341,7 +1341,7 @@ The <code>number</code> variable will store the generated random number.</p>
 </code></pre>
 <p>Let us now define a function named <code>useChainlinkVRF()</code> that will send a randomness request to the Chainlink VRF coordinator contract.
 This function will send a randomness request to the coordinator contract, and return a <code>requestId</code> that will be used to identify the request.</p>
-<pre><code class="language-cpp">     function useChainlinkVRF() public returns (uint256 requestId) {
+<pre><code class="language-solidity">     function useChainlinkVRF() public returns (uint256 requestId) {
         requestId = CoordinatorInterface.requestRandomWords(
             KEY_HASH,
             _subscriptionId,
@@ -1355,7 +1355,7 @@ This function will send a randomness request to the coordinator contract, and re
 <p>Lastly, we need to define the <code>fulfillRandomWords()</code> function. This function will be called by the Chainlink VRF coordinator contract once the randomness request has been fulfilled by the off-chain Chainlink node.</p>
 <p>We can modulo the huge random number we get back to trim it down to a desired range.
 Based on the number we get back, we will set the <code>number</code> variable to 1, 2, or 3.</p>
-<pre><code class="language-cpp">    function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override {
+<pre><code class="language-solidity">    function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override {
 
         // To get a random number b/w 1 and 100 inclusive
         uint256 randomNumber = (randomWords[0] % 100) + 1;
@@ -1378,7 +1378,7 @@ By calling the <code>useChainlinkVRF()</code> function on our contract, a user c
 </blockquote>
 <p>Create a file named <code>ChainlinkVRF.t.sol</code> inside your Foundry project.</p>
 <p>To test our VRF contract using the <code>VRFCoordinatorV2Mock</code>, set up the test file with the following imports:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: UNLICENSED
+<pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
 import &quot;forge-std/Test.sol&quot;;
@@ -1386,12 +1386,12 @@ import {VRFCoordinatorV2Mock} from &quot;@chainlink/v0.8/mocks/VRFCoordinatorV2M
 import {ChainlinkVRF} from &quot;./ChainlinkVRF.sol&quot;;
 </code></pre>
 <p>Next, initialize a contract named <code>ChainlinkVRF_test</code>:</p>
-<pre><code class="language-cpp">contract ChainlinkVRF_test is Test {
+<pre><code class="language-solidity">contract ChainlinkVRF_test is Test {
 
 }
 </code></pre>
 <p>We need to declare a few state variables:</p>
-<pre><code class="language-cpp">    // Initializing the contract instances
+<pre><code class="language-solidity">    // Initializing the contract instances
     ChainlinkVRF public chainlinkVRF;
     VRFCoordinatorV2Mock public vrfCoordinatorV2Mock;
 
@@ -1400,7 +1400,7 @@ import {ChainlinkVRF} from &quot;./ChainlinkVRF.sol&quot;;
     uint counter1; uint counter2; uint counter3;
 </code></pre>
 <p>The <code>counter1</code>, counter2<code>and</code>counter3<code>variables will keep a count of the number of times each of the respective random numbers was generated. Now let us define the</code>setUp()` function to set up the initial state:</p>
-<pre><code class="language-cpp">    function setUp() public {
+<pre><code class="language-solidity">    function setUp() public {
         vrfCoordinatorV2Mock = new VRFCoordinatorV2Mock(100000000000000000, 1000000000);
         uint64 subId = vrfCoordinatorV2Mock.createSubscription();
 
@@ -1424,7 +1424,7 @@ This will however be a slightly different test than the ones we have written bef
 Test functions written without any assertions <strong>always</strong> pass. We will however use the <code>console2</code> contract from Forge's test suite to log out the random numbers generated by our contract.</p>
 <p>We can check how many times each number was generated by looking at the <code>counter1</code>, <code>counter2</code> and <code>counter3</code> variables.
 This will help us see if the probability of the numbers being generated is along the desried lines.</p>
-<pre><code class="language-cpp">function testrequestRandomWords() public {
+<pre><code class="language-solidity">function testrequestRandomWords() public {
 
         for(uint i = 0; i &lt; 1000; i++)
         {                    
@@ -1518,7 +1518,7 @@ Forge gives us quite a few options to configure the exact versioning as we want.
 <p>Let us start with <code>OmniCounter_Sepolia.sol</code>:</p>
 <p>Import the <code>NonblockingLzApp.sol</code> file. This file contains an abstract contract named <code>NonblockingLzApp</code>.
 We will implement the <code>_nonblockingLzReceive()</code> function in our contract, that was left undefined in the abstract contract.</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 
@@ -1526,7 +1526,7 @@ pragma solidity ^0.8.19;
 import &quot;@layerzero-contracts/lzApp/NonblockingLzApp.sol&quot;;
 </code></pre>
 <p>Initialize the <code>OmniCounter_Sepolia</code> contract:</p>
-<pre><code class="language-cpp">/**
+<pre><code class="language-solidity">/**
  * @title OmniCounter_Sepolia
  * @dev This contract represents the OmniCounter application on the Sepolia testnet.
  * It allows for incrementing a counter and sending a payload to another chain.
@@ -1541,7 +1541,7 @@ contract OmniCounter_Sepolia is NonblockingLzApp {
 <li><code>counter</code>: We want this variable to be incremented by 1 everytime the <code>incrementCounter</code> function is called on the Mumbai testnet.</li>
 </ol>
 <p>We will also initialize the two constructors with the address of the on-chain LayerZero endpoint for Sepolia.</p>
-<pre><code class="language-cpp">    bytes public constant PAYLOAD = &quot;Sepolia_to_Mumbai&quot;;
+<pre><code class="language-solidity">    bytes public constant PAYLOAD = &quot;Sepolia_to_Mumbai&quot;;
     uint public counter;
 
     constructor(address _lzEndpoint) NonblockingLzApp(_lzEndpoint) {}
@@ -1556,20 +1556,20 @@ Let us look at the parameters of the <code>send()</code> function:</p>
 <li><code>bytes(&quot;&quot;)</code>: This param is used to tweak the default settings of our contract's interaction with the LayerZero protocol. We will not be using it in this tutorial.</li>
 <li><code>msg.value</code>: The user calling <code>incrementCounter</code> needs to send some ETH along with the function call. This param keeps a track of the amount of ETH sent.</li>
 </ol>
-<pre><code class="language-cpp">    function incrementCounter(uint16 _dstChainId) public payable {
+<pre><code class="language-solidity">    function incrementCounter(uint16 _dstChainId) public payable {
         _lzSend(_dstChainId, PAYLOAD, payable(msg.sender), address(0x0), bytes(&quot;&quot;), msg.value);
     }
 </code></pre>
 <p>Next, we implement the <code>_nonblockingLzReceive</code> function. This function is called by the LayerZero endpoint when it receives a message that needs to be delivered to this contract.
 We an include whatever logic we want executed in response to the message receival in the function definition. In this case, we just increment the value of the counter variable.</p>
-<pre><code class="language-cpp">        function _nonblockingLzReceive(uint16, bytes memory, uint64, bytes memory) internal override {
+<pre><code class="language-solidity">        function _nonblockingLzReceive(uint16, bytes memory, uint64, bytes memory) internal override {
         counter += 1;
     }
 </code></pre>
 <p>And that is it for our <code>OmniCounter_Sepolia.sol</code> contract.
 Please note that this is an exceedingly simple implementation of the LayerZero protocol. This code is <em><strong>NOT</strong></em> meant to be used in production.</p>
 <p>The <code>OmniCounter_Mumbai.sol</code> contract is almost identical. Paste the following code inside it:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: MIT
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.19;
 
@@ -1620,7 +1620,7 @@ If our message passes from:</p>
 <h2 id="setting-up-the-test-file"><a class="header" href="#setting-up-the-test-file">Setting up the test file</a></h2>
 <p>Create a file named <code>OmniCounter.t.sol</code> inside your Foundry project.</p>
 <p>To test our VRF contract using <code>LZEndpointMock</code>, set up the test file with the following imports:</p>
-<pre><code class="language-cpp">// SPDX-License-Identifier: UNLICENSED
+<pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
 //Imports to use Foundry's testing and logging suite
@@ -1632,12 +1632,12 @@ import {OmniCounter_Sepolia} from &quot;./OmniCounter_Sepolia.sol&quot;;
 import {OmniCounter_Mumbai} from &quot;./OmniCounter_Mumbai.sol&quot;;
 </code></pre>
 <p>Next, initialize a contract named <code>OmniCounterTest</code>:</p>
-<pre><code class="language-cpp">contract OmniCounterTest is Test {
+<pre><code class="language-solidity">contract OmniCounterTest is Test {
 
 }
 </code></pre>
 <p>Next, let us set up the state variables:</p>
-<pre><code class="language-cpp">
+<pre><code class="language-solidity">
     LZEndpointMock public lzEndpointMock;
 
     OmniCounter_Sepolia public omniCounter_Sepolia;
@@ -1647,7 +1647,7 @@ import {OmniCounter_Mumbai} from &quot;./OmniCounter_Mumbai.sol&quot;;
     uint16 public constant ChainId = 1221;
 </code></pre>
 <p>Let us set up the initial state using the <code>setUp()</code> function:</p>
-<pre><code class="language-cpp">    function setUp() public {
+<pre><code class="language-solidity">    function setUp() public {
 
         vm.deal(address(0x1), 100 ether);
         vm.deal(address(0x2), 100 ether);
@@ -1700,7 +1700,7 @@ Any number can be typecasted into a hexadecimal value, which in turn can be padd
 </blockquote>
 <h3 id="sepolia-to-mumbai"><a class="header" href="#sepolia-to-mumbai">Sepolia to Mumbai</a></h3>
 <p>Let us now write a test function to check if we can increment the <code>counter</code> variable on the Mumbai testnet by calling the <code>incrementCounter</code> function on the Sepolia testnet.</p>
-<pre><code class="language-cpp">    /**
+<pre><code class="language-solidity">    /**
      * @dev Tests the counter increment from Sepolia to Mumbai.
     */
     function test_SepoliaToMumbai() public {
@@ -1724,7 +1724,7 @@ Any number can be typecasted into a hexadecimal value, which in turn can be padd
 <p>The test passes if the counter value increases by 1, otherwise it fails.</p>
 <h3 id="mumbai-to-sepolia"><a class="header" href="#mumbai-to-sepolia">Mumbai to Sepolia</a></h3>
 <p>We can write a similar test function to check if we can increment the <code>counter</code> variable on the Sepolia testnet by calling the <code>incrementCounter</code> function on the Mumbai testnet.</p>
-<pre><code class="language-cpp">    /**
+<pre><code class="language-solidity">    /**
      * @dev Tests the counter increment from Mumbai to Sepolia.
     */
     function test_MumbaiToSepolia() public {
@@ -1792,6 +1792,7 @@ Any number can be typecasted into a hexadecimal value, which in turn can be padd
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
+        <script src="src/static/solidity.min.js"></script>
 
         <script>
         window.addEventListener('load', function() {

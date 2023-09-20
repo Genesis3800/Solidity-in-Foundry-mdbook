@@ -10,7 +10,7 @@ A few points to note:
 2. All function declarations must be marked external, and must configure the param and return types exactly as they are in the contract.
 3. No function will have any sort of definition.  
 
-```cpp
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
