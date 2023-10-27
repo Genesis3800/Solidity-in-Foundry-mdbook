@@ -3,7 +3,7 @@
 [About](./README.md)
 [Getting Started](./GettingStarted.md)
 
-# Solidity Basics
+# Solidity/Foundry Basics
 
 - [Hello World](./SolidityBasics/HelloWorld/HelloWorld.md)
   - [HelloWorld.sol](./SolidityBasics/HelloWorld/HelloWorld_contract.md)
@@ -25,7 +25,13 @@
   - [UsingInterface.sol](./SolidityBasics/Interfaces/Interfaces_contract.md)
   - [Interfaces.t.sol](./SolidityBasics/Interfaces/Interfaces_test.md)
 
-# Applications
+- [Libraries](./SolidityBasics/Library/Library.md)
+ <!-- -  - [BadMathLib.sol](./SolidityBasics/Library/BadMathLib_contract.md)
+  - [BadMathLib.t.sol](./SolidityBasics/Library/BadMathLib_test.md)
+  - [SafeMathLib.sol](./SolidityBasics/Library/SafeMathLib_contract.md)
+  - [SafeMathLib.t.sol](./SolidityBasics/Library/SafeMathLib_test.md) -->
+
+# Tutorials
 
 - [Chainlink](./Applications/Chainlink/Chainlink.md)
   - [Chainlink Data Feeds](./Applications/Chainlink/ChainlinkDataFeeds/ChainlinkDataFeeds.md)
