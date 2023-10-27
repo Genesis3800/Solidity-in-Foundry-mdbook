@@ -1015,14 +1015,42 @@ Next, let us write two test functions to check if we can change the values the s
 <p>Run the tests and see if they pass.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="library"><a class="header" href="#library">Library</a></h1>
 <p>Initialized using the <code>library</code> keyword, libraries in Solidity are usually a collection of view and pure functions that are expected to be used by multiple contracts.
-Using a library in these cases abstracts away commonly used code and helps in building a more modular codebase.</p>
+A library is not 'inherited' as you would inherit a contract. A library is natively accessible to all contracts in the same file, and can be imported into other files as well.
+Using a library in these cases abstracts away commonly used code and helps in building a more modular codebase.
+Libraries are mainly distinguished by the visibility of the functions defined within them.
+A library can have <code>internal</code>, <code>external</code> or <code>public</code>, functions but not <code>private</code> functions.</p>
+<p>A library with only internal functions is deployed alongside the contract that uses it, and the code of the library is included in the bytecode of the contract.
+On the other hand if your library has external or public functions, it is deployed separately and your contract has to be linked to that deployment manually to perform DELEGATECALL(s) to it.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>This is how you would define a library in Solidity:</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+// Define a library named MathLib
+library MathLib {
+
+    function cubeRoot() internal pure returns (uint256) {
+        // ...
+    }
+}
+
+// Define a contract that uses the library
+// Note that the library is not inherited
+
+contract Calculator {
+
+    function calculateCubeRoot(uint256 _num) public pure returns (uint256) {
+        // Call the cubeRoot function defined in the library
+        return MathLib.cubeRoot(_num);
+    }
+}
+</code></pre>
 <p>In this tutorial, we will:</p>
 <ol>
-<li>Write a small library that performs a few basic arithmetic operations.</li>
-<li>Write a few simple fuzz tests to understand why our library isn't very useful.</li>
-<li>Understand the concepts of overflow and underflow in Solidity.</li>
-<li>Look at <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/Math.sol">Openzeppelin's SafeMath library</a> to see how it implements arithmetic operations.</li>
-<li>Finally we will fuzz this library to see how it handles the edge cases that our library failed.</li>
+<li>Take a look at what <code>CREATE3</code> is and how it works.</li>
+<li>We will look at an implementation of the concept using the famous <a href="https://github.com/Vectorized/solady">solady</a> repo.</li>
+<li>Test and deploy a <code>CREATE3</code> factory contract on multiple chains to the same address.</li>
+<li>Use these factories to deploy two different contracts on two chains to the same address.</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chainlink"><a class="header" href="#chainlink">Chainlink</a></h1>
 <p><a href="https://chain.link/">Chainlink</a> is a decentralized oracle network that helps inject off-chain data into smart contracts on the blockchain.
@@ -1770,6 +1798,22 @@ Any number can be typecasted into a hexadecimal value, which in turn can be padd
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
